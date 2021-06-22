@@ -18,8 +18,8 @@ const average = (arrayReceived) => {
     return undefined;
   }
   // eslint-disable-next-line guard-for-in
-  for (let index = 0; index < arrayReceived; index += 1) {
-    sum += arrayReceived[index];
+  for (let index of arrayReceived) {
+    sum += index;
   }
   for (let index of arrayReceived) {
     if (typeof (index) !== 'number') {
