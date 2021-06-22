@@ -16,6 +16,19 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  let output = '';
+
+  if (nome === undefined && idade === undefined) { // valor padrão do parâmetro é undefined (se não passar, os paramêtros terão undefined)
+    return undefined;
+  } 
+
+    output = `Oi, meu nome é ${nome}!
+    Tenho ${idade} anos,
+    trabalho na Trybe e mando muito em programação!
+    #VQV!`;
+
+  return (output);
+};
 
 module.exports = vqv;
