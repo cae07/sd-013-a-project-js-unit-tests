@@ -12,8 +12,22 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  
+const average = (array) => {
+  let soma = 0;
+
+  if (array.length === 0) {
+    return undefined;
+  }
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] === 'string') {
+      return undefined;
+    }
+    soma += array[i];
+  }
+  /* A função Math.round() retorna o valor de um número arredondado para o inteiro mais proximo. */
+  /* Sourse: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round */
+  return Math.round(soma / array.length);
 };
 
 module.exports = average;
