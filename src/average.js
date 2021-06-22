@@ -14,8 +14,6 @@
 
 // Ref: https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
 const average = (array) => {
-  const newArray = [];
-
   if (array.length === 0) {
     return undefined;
   }
@@ -23,12 +21,10 @@ const average = (array) => {
   for (let i = 0; i < array.length; i += 1) {
     if (typeof array[i] !== 'number') {
       return undefined;
-    } else {
-      newArray.push(array[i]);
     }
   }
 
-  const x = newArray.reduce((a, b) => a + b, 0) / newArray.length;
+  const x = array.reduce((a, b) => a + b, 0) / array.length;
   return Math.round(x);
 };
 
