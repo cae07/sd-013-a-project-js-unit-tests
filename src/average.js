@@ -13,13 +13,14 @@
 */
 
 //Ref: https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
+
 const average = (array) => {
-  if (array.length === 0){
+  if (array.length === 0) {
     return undefined;
   }
 
   for (let i = 0; i < array.length; i +=1) {
-    if (isNaN(array[i])){
+    if (Number.isNaN(array[i])) {
       return undefined;
     }
   }
@@ -32,15 +33,13 @@ const average = (array) => {
   }
 
   const x = newArray.reduce((a, b) => a + b, 0);
-  const y = newArray.length;
-  const z = x/y;
+  const y = x / newArray.length;
 
-  if (z >= 0){
-    return Math.floor(z);
+  if (y >= 0) {
+    return Math.floor(y);
   } else {
-    return Math.ceil(z)
+    return Math.ceil(y);
   }
-  
 };
 
 module.exports = average;
