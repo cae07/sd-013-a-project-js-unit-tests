@@ -22,7 +22,7 @@ const average = (array) => {
     roundAverage = Math.round(arrayAverage); /* Math.round retirado deste link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round */
 
     if (typeof (array[i]) !== 'number' || array.length === null) { /* typeof retirado deste link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/typeof */
-      return undefined
+      return undefined;
     }
   }
   return roundAverage;
