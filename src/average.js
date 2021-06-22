@@ -23,7 +23,7 @@ const average = (array) => {
     }
     count += array[index];
   }
-  return Math.random(count / array.length);
+  return Math.round(count / array.length);
 };
 
 module.exports = average;
