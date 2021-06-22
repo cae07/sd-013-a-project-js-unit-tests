@@ -19,7 +19,7 @@ const average = (array) => {
     if (typeof (array[index]) !== 'number' || array.length === 0) {
       return undefined;
     } else [
-      somaDosNumeradores = (array[index] + somaDosNumeradores);
+      somaDosNumeradores = (array[index] + somaDosNumeradores)
       mediaDaFuncao = (somaDosNumeradores / array.length)
     ]
   }
