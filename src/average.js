@@ -12,8 +12,62 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // coding here..
+const average = (arr) => {
+  let indexSum = 0;
+
+  if (!arr.length) {
+    return undefined;
+  } else {
+    for (let i = 0; i < arr.length; i += 1) {
+      if (typeof arr[i] !== 'number') {
+        return undefined;
+      } else {
+        indexSum += Math.round(arr[i]);
+      }
+    }
+  }
+
+  let x = indexSum / arr.length;
+  return Math.round(x);
 };
 
 module.exports = average;
+
+// const arr = [];
+// console.log(arr.length);
+// console.log(average(arr));
+
+// const average = (arr) => {
+//   let indexSum = 0;
+
+//   if (!arr.length) {
+//     throw undefined;
+//   } else {
+//     for (let i = 0; i < arr.length; i += 1) {
+//       if (typeof arr[i] !== 'number') {
+//        throw undefined;
+//       } else {
+//         indexSum += Math.round(arr[i]);
+//       }
+//     }
+//   }
+//   return Math.round(indexSum / arr.length);
+// };
+
+// module.exports = average;
+
+
+// const average = (arr) => {
+//   let indexSum = 0;
+
+//   if (!arr.length || typeof arr !== 'number') {
+//     throw undefined;
+//   } else {
+//     for (let i = 0; i < arr.length; i += 1) {
+//         indexSum += Math.round(arr[i]);
+//     }
+//   }
+//   return Math.round(indexSum / arr.length);
+// };
+
+// module.exports = average;
