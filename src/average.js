@@ -12,8 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (array) => {
+  let soma = 0;
+  let arrayAverage;
+  let roundAverage;
+  for (let i = 0; i < array.length; i += 1) {
+    soma += array[i];
+    arrayAverage = soma / array.length;
+    roundAverage = Math.round(arrayAverage); /* Math.round retirado deste link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round */
+
+    if (typeof (array[i]) !== 'number' || array.length === null) { /* typeof retirado deste link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/typeof */
+      return undefined
+    }
+  }
+  return roundAverage;
+};
 
 module.exports = average;
-
-
