@@ -14,17 +14,17 @@
 
 const average = (t) => {
   let cont = 0;
-  let string = 0;
-  for (let key in t) {
-    if (typeof (t[key]) === 'number') {
-      cont += t[key];
-    } else {
-      string += 1;
-    }
-  } if (string === 0) {
-    return Math.round(cont / t.length);
-  } 
+  if (t.length === 0) {
     return undefined;
+  }
+ for (let i = 0; i < t.length; i += 1) {
+   if (typeof (t[i]) === 'number') {
+     cont += t[i];
+    } else {
+      return undefined;
+    }
+  }
+  return Math.round(cont / t.length);
 };
 
 module.exports = average;
