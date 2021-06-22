@@ -1,4 +1,3 @@
-
 const average = (array) => {
   let output = 0;
   if (array.length === 0) {
