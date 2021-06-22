@@ -22,10 +22,15 @@ const circle = require('../src/circle');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-
+const pi = 3.14;
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
-    assert.fail();
+    assert.strictEqual(typeof circle(2), 'object');
+    assert.strictEqual(Object.entries(circle(2)).length, 3);
+    assert.strictEqual(circle(), undefined);
+    assert.StrictEqual(Object.values(circle(2))[1], 2 * pi * 2);
+    assert.StrictEqual(Object.values(circle(3))[2], 3.14 * 3 * 3);
+    assert.deepStrictEqual(Object.values(circle(3)), [3, (pi * 3 * 3), (2 * pi * 3)]);
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
     // Teste se o objeto retornado tem 3 entradas.
