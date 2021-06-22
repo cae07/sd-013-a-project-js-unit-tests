@@ -27,5 +27,5 @@ const circle = (radius) => {
     circumference: parseFloat((PI * radius * 2).toFixed(2)),
   };
 };
-
+console.log(circle(2));
 module.exports = circle;
