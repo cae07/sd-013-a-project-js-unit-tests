@@ -28,3 +28,12 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
     assert.strictEqual(numbers([' ']), false)
   });
 });
+
+/*
+                  LEMBRANDO QUE O ARRAY PASSADO PARA A FUNÇÃO DEVE CONTER APENAS NUMEROS PARA RETORNAR TRUE.
+                  
+1 - O primeiro teste é passado um array, e colocamos true como 'expected';
+2 - O segundo teste é passado um array, e no meio desse array um elemento do tipo string, e colocamos false como 'expected';
+3 - O terceiro teste é passado um array, e no meio desse array um elemento do tipo string, e colocamos false como 'expected';
+4 - O quarto teste é passado um array com uma string, e colocamos false como 'expected';
+*/

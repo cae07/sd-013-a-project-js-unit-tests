@@ -15,6 +15,22 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (nome) => {
+  const student = {
+    name: nome,
+    feedback: () => {
+      const value = 'Eita pessoa boa!';
+      return value;
+    },
+  };
+  return student;
+};
 
-module.exports = createStudent;
+/*
+1 - Declaramos a constante contendo o objeto e suas chaves e valores;
+2 - Precisamos adicionar o valor em uma constante (Usamos constante porque não é reatribuido futuramente)
+  e depois retornar porque não é permitido um "return" após uma arrow Function;
+3 - Retornamos a constante com o objeto;
+*/
+
+ module.exports = createStudent;

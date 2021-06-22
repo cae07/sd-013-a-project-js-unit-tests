@@ -27,4 +27,10 @@ trabalho na Trybe e mando muito em programação!
   return result;
 };
 
+/*
+1 - Primeiro fazemos as validações para saber se foram passados dois parametros para a função, caso contrario retornamos 'undefined';
+2 - Definimos a constante usando literalString passando o texto e os parametros;
+3 - Retornamos a constante criada anteriormente
+*/
+
 module.exports = vqv;

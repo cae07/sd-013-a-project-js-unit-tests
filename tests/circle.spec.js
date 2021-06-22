@@ -40,3 +40,14 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.deepStrictEqual(circle(3), {radius: 3, area: 3.14 * 3 * 3, circumference: 2 * 3.14 * 3,})
   });
 });
+
+/*
+1 - O primeiro teste, testa se a função retorna um objeto, passando um numero aleatório como parametro;
+2 - O segundo teste, testa se a função retorna um objeto com 3 chaves, também passando um numero aleatório
+3 - O terceiro teste, testa se a função retorna 'undefined' caso não seja passado nenhum parametro para a função;
+4 - O quarto teste, testa se a função retorna o valor da chave 'circumference' conforme o 'expected';
+5 - O quinto teste, testa se a função retorna o valor da chave 'area' conforme o 'expected', nesse caso como é retornado
+ um valor com ponto flutuante, adicionamos a propriedade 'parseFloat' e 'toPrecision', para termos o resultado esperado 
+ de '28.259999999999998';
+6 - o sexto teste, testa se a função retorna um objeto com as chaves e valores adicionados no 'expected';
+*/

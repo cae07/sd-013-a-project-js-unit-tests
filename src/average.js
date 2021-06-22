@@ -28,4 +28,12 @@ const average = (array) => {
   return round;
 };
 
+/*
+ 1 - Declaramos a variavel 'sum' com o valor de '0';
+ 2 - Depois fazemos um laço for para percorrer todo o array, que já checa se o valor é um numero e se o array não é vazio,
+ caso essas condições sejam verdadeiras retornamos 'undefined';
+ 3 - No final do laço for atribuimos o resultado na variavel 'sum';
+ 4 - Definimos as constantes 'functionAvarage' para conseguirmos a média od array, e a 'round' para arredondarmos o numero;
+*/
+
 module.exports = average;
