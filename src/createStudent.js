@@ -15,6 +15,12 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (nome) => {
+  const obrigatoria = 'porque o lint me obriga a ter uma const e não deixa eu colocar o return?';
+  return {
+    name: nome,
+    feedback: () => 'Eita pessoa boa!',
+  };
+};
 
 module.exports = createStudent;
