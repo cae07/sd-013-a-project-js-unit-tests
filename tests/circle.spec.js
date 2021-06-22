@@ -3,10 +3,7 @@
 
 const assert = require('assert');
 const circle = require('../src/circle');
-const output = {
-  radius: 3,
-  area: 28.26,
-  circumference: 18.84};
+
 
 /*
   Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência).
@@ -39,8 +36,8 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     assert.strictEqual(Object.values(circle(2))[2], 12.56);
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    assert.strictEqual(Object.values(circle(3))[1], 28.26)
+    assert.strictEqual(Object.values(circle(3))[1], 28.26);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.deepStrictEqual(circle(3), output);
+    assert.deepStrictEqual(circle(3), {radius: 3, area: 28.26, circumference: 18.84});
   });
 });
