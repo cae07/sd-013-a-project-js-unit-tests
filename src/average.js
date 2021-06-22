@@ -18,11 +18,11 @@ const average = (arr) => {
   let mediaArr = 0; 
 
   if (!Array.isArray(arr) || arr.length === 0) {
-    return undefined
+    return undefined;
   }
 
-  for (let index in arr) {
-    if (typeof(arr[index]) === 'string') {
+  for (let index = 0; index < arr.length; index += 1) {
+    if (typeof (arr[index]) === 'string') {
       return undefined;
     }
     sumArr += arr[index];
