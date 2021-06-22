@@ -15,14 +15,14 @@
 const average = (array) => {
   let somaDosNumeradores = 0;
   let mediaDaFuncao;
-  for(index = 0; index < array.length; index +=0) {
+  for(let index = 0; index < array.length; index +=0) {
     if (typeof (array[index]) !== 'number' || array.length === 0) {
       return undefined;
-    } else [
-      somaDosNumeradores = (array[index] + somaDosNumeradores)
-      mediaDaFuncao = (somaDosNumeradores / array.length)
-    ]
+    }
+    somaDosNumeradores = array[index] + somaDosNumeradores;
+    mediaDaFuncao = somaDosNumeradores / array.length;
   }
+  return mediaDaFuncao;
 };
 
 module.exports = average;
