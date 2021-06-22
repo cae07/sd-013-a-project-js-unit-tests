@@ -39,6 +39,4 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
-console.log(productDetails('alcool em gel', 'mascara'));
-
 module.exports = productDetails;
