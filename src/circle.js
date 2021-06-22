@@ -28,4 +28,8 @@ const circle = (radius) => {
   };
 };
 
+let a = Object.values(circle(3));
+console.log(circle(3));
+console.log(parseFloat(a[1])); 
+
 module.exports = circle;
