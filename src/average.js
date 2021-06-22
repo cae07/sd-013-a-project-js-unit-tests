@@ -12,6 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => { };
+const average = (array) => { 
+  if (array.length === 0) { // vazio retornar undefined
+    return undefined;
+  }
 
-module.exports = average;
+  let count = 0;
+
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof (array[index]) !== 'number') { // olhar item por item e se não for numero retirna undefined
+      return undefined; 
+    }
+    count += array[index];
+  }
+  return Math.round(count / array.length);// round Se a parte fracionária do número for maior ou igual a  0.5, o argumento x é arredondado para o próximo número inteiro acima, entretanto se a parte fracionária do número for menor que 0.5, então o valor de x é arredondado para o próximo número inteiro abaixo.
+  };
+  
+  module.exports = average;
