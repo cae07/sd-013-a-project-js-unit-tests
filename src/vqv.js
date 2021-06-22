@@ -19,11 +19,12 @@
 const vqv = (nome, idade) => {
   if (nome === undefined && idade === undefined) {
     return undefined;
-  } else if (nome === 'Tunico' && idade === 30) {
-`Oi, meu nome é ${nome}!
+  } else if ((typeof(nome) === 'string') && (typeof(idade) === 'number')) {
+    let letvqv = `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
-#VQV!`
+#VQV!`;
+return letvqv;
   }
 };
 
