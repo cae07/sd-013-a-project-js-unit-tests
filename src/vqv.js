@@ -17,7 +17,7 @@
 */
 
 const vqv = (nome, idade) => {
-  if ( nome === null || idade === null) {
+  if (nome === null || idade === null) {
     return undefined;
   }
 
@@ -27,9 +27,6 @@ Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
   }
-
 };
 
 module.exports = vqv;
-
-
