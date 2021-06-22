@@ -16,14 +16,16 @@
 */
 
 const myCounter = () => {
-  var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
+  let myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+    for (let otherCounter = 2; otherCounter <= 3; otherCounter += 1) {
+      myArray.push(otherCounter);
     }
   }
   return myArray;
 };
-
+/*
+1 - Apenas alterei a segunda variavel 'counter' por 'otherCounter', e mudei de 'var' para 'let';
+*/
 module.exports = myCounter;
