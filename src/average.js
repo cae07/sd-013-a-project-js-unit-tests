@@ -15,14 +15,13 @@
 const average = (testArray) => {
   let sum = 0;
 
-  if (typeof (testArray) !== 'object' || testArray.length === 0) return undefined;
+  if (typeof testArray !== 'object' || testArray.length === 0) return undefined;
 
   for (const itemFromArray of testArray) {
-
-    if (typeof (itemFromArray) !== 'number') return undefined;
+    if (typeof itemFromArray !== 'number') return undefined;
 
     sum += itemFromArray;
-  };
+  }
 
   const averageOfSum = Math.round(sum / testArray.length);
 
