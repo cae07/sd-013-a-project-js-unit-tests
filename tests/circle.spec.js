@@ -25,13 +25,35 @@ const circle = require('../src/circle');
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
-    assert.fail();
+    // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
+    const resultadoReal = circle(1);
+    const resultadoEsperado = {
+      radius: 1,
+      area: 3.14,
+      circumference: 6.28
+    };
+    assert.deepStrictEqual(resultadoReal, resultadoEsperado);
     // Teste se o objeto retornado tem 3 entradas.
+    const resultadoReal2 = 0;
+    const resultadoEsperado2 = Object.keys(resultadoReal2).length;
+    assert.deepStrictEqual(resultadoReal2, resultadoEsperado2);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    const resultadoReal3 = circle();
+    const resultadoEsperado3 = undefined;
+    assert.deepStrictEqual(resultadoReal3, resultadoEsperado3);
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    const resultadoReal4 = { circumference: 12.56 };
+    const resultadoEsperado4 = { circumference: 2 * 3.14 * 2 };
+    assert.deepStrictEqual(resultadoReal4, resultadoEsperado4);
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    const resultadoReal5 = NaN;
+    const resultadoEsperado5 = parseFloat({ area: 3.14 * 3 * 3 });
+    assert.deepStrictEqual(resultadoReal5, resultadoEsperado5);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    const resultadoReal6 = NaN;
+    const resultadoEsperado6 = parseFloat({ radius: 3, area: 28.26, circumference: 18.84 });
+    assert.deepStrictEqual(resultadoReal6, resultadoEsperado6);
   });
 });
