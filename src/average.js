@@ -23,12 +23,12 @@ const average = (arr) => {
       return undefined;
     }   
   }   
-    
+
   let soma = 0;
   for (let v of arr) {    
     soma += v;    
   }
-return Math.round(soma / arr.length);    
+  return Math.round(soma / arr.length);    
 };
  
 module.exports = average;
