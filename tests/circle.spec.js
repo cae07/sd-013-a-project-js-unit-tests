@@ -25,13 +25,18 @@ const circle = require('../src/circle');
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle retorna um objeto.
-    // Teste se o objeto retornado tem 3 entradas.
+    // Foi realizado na função o que o teste pede e com os resultados obtidos foram definidos os testes.
+    // Teste se circle retorna um objeto. O typeof verifica o tipo do retorno.
+    assert.strictEqual(typeof circle(1), 'object');
+    // Teste se o objeto retornado tem 3 entradas. Entradas são chaves e valores e o .length traz o numero de chaves existentes.
+    assert.strictEqual(Object.keys(circle(1)).length, 3);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    assert.strictEqual(circle(), undefined);
+    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2. O .circumference permite acessar a chave 3 do objeto e comparar seu valor com o esperado.
+    assert.strictEqual(circle(2).circumference, 12.56);
+    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3. O .area permite acessar a chave 2 do objeto e comparar o valor recebido com o esparado.
+    assert.strictEqual(circle(3).area, 28.259999999999998);
+    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3. O strictEqual deu erro nesse teste, usei o deepEqual que passou mas apareceu uma mensagem que indicava não ser adequado o uso (ficou riscado), então foi usado deepStrictEqual "que testa se dois objetos e seus filhos são iguais" (referência: https://www.w3schools.com/nodejs/met_assert_deepstrictequal.asp).
+    assert.deepStrictEqual(circle(3), {radius: 3, area: 28.259999999999998, circumference: 18.84});     
   });
 });

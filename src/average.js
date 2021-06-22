@@ -11,9 +11,21 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+// o método 'Math.round()' permite retornar o valor de um número arredondado para o inteiro mais próximo, recebe como parâmetro um numero e retorna um inteiro.
+// typeOf indica o tipo do operador, sendo assim se o tipo do operador for diferente de number ou for vazio deverá retornar undefined. 
+const average = (array) => {
+  let sum = 0;
 
-const average = () => {
-  
+ if (array.length === 0) {  
+ return undefined;
+}
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof (array[i]) !== 'number') {
+      return undefined;
+    } sum += array[i];
+  }  
+  let averageResult = Math.round(sum / array.length);
+  return averageResult;
 };
 
 module.exports = average;
