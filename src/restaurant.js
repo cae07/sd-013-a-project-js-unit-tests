@@ -91,21 +91,22 @@ const consumptionValue = (chave, j) => {
   return 0;
 };
 
-const toPay = (chave) => {
-  let pay = 0;
+const paraPagar = (chave) => {
+  let pagar = 0;
   for (let j = 0; j < restaurante.consumption.length; j += 1) {
-    pay += consumptionValue(chave, j);
+    pagar += consumptionValue(chave, j);
   }
-  return pay;
+  return pagar;
 };
 
 const orderFromMenu = (request) => restaurante.consumption.push(request);
 
-const createMenu = objeto => Object.assign(restaurante, {
+const createMenu = (objeto) => Object.assign(restaurante, {
   fetchMenu: objeto,
   consumption: [],
   order: (request) => orderFromMenu(request),
-  pay: () => toPay(Object.entries(restaurante.fetchMenu.food)) + toPay(Object.entries(restaurante.fetchMenu.drink)),
+  pay: () => paraPagar(Object.entries(restaurante.fetchMenu.food))
+  + paraPagar(Object.entries(restaurante.fetchMenu.drink)),
 });
 
 console.log(createMenu({ food: {}, drink: {} }));

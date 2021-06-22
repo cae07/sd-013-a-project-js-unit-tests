@@ -21,13 +21,11 @@ const average = (array) => {
     if (typeof array[index] !== 'number') { resultado = undefined; }
     soma += array[index];
   }
-  if (resultado === undefined) {
-    return undefined;
-  } else {
+  if (resultado !== undefined) {
     media = (soma / array.length);
-    return Math.round(media);
+    resultado = Math.round(media);
   }
+  return resultado;
 };
-
 
 module.exports = average;

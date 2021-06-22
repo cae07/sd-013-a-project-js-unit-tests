@@ -73,7 +73,6 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     const entrada3 = createMenu({ tipo1: {}, tipo2: {} }).fetchMenu;
     const saida3 = { tipo1: {}, tipo2: {} };
-
     assert.deepStrictEqual(entrada3, saida3);
 
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
