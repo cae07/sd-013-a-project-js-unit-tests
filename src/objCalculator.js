@@ -23,8 +23,8 @@ const calculator = {
   add: (num1, num2) => num1 + num2,
   mult: (num1, num2) => num1 * num2,
   div: (num1, num2) => Math.trunc(num1 / num2), 
-//https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
   sub: (num1, num2) => num1 - num2,
 };
-console.log(calculator.div(5, 2));
+
 module.exports = calculator;
