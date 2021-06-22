@@ -39,6 +39,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     let circle2 = circle(3);
     circle2.area = parseFloat((circle(3).area).toPrecision(4));    
     assert.deepStrictEqual(circle2, {radius: 3, area: 28.26, circumference: 18.84});
-    assert.fail();  
+    /* assert.fail();   */
   });
 });
