@@ -12,6 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+// alteração para o commit inicial do projeto
 const average = () => {};
 
 module.exports = average;
