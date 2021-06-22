@@ -19,7 +19,7 @@ const average = (array) => {
   }
 
   for (let i = 0; i < array.length; i += 1) {
-    if (Number.isNaN(array[i])) {
+    if (typeof array[i] !== 'number') {
       return undefined;
     }
   }
@@ -27,8 +27,7 @@ const average = (array) => {
   const newArray = [];
 
   for (let j = 0; j < array.length; j += 1) {
-    const itg = parseInt(array[j], 10);
-    newArray.push(itg);
+    newArray.push(array[j]);
   }
 
   const x = newArray.reduce((a, b) => a + b, 0) / newArray.length;
