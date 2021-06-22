@@ -12,6 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (myArray) => {
+  if (myArray.length === 0 || myArray[0] === ' ' || myArray[0] === '') return undefined;
+  let blnNaN = false;
+  const fltSum = myArray.reduce((acc, curr) => {
+    const strTypeData = typeof curr;
+    if (strTypeData !== 'number') {
+      blnNaN = true;
+    }
+    return acc + curr;
+  });
+  if (blnNaN) return undefined;
+  const intMyArrayLength = myArray.length;
+  const intAverage = Math.round(fltSum / intMyArrayLength);
+  return intAverage;
+};
 
 module.exports = average;
