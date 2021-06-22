@@ -20,18 +20,10 @@
 */
 
 const calculator = {
-  mult: (num, num0) => {
-    return Math.ceil(num * num0)
-  },
-  div: (num, num0) => {
-    return Math.floor(num / num0)
-  },
-  sub: (num, num0) => {
-    return Math.floor(num - num0)
-  },
-  add: (num, num0) => {
-    return Math.ceil(num + num0)
-  }
+  mult: (num, num0) => Math.ceil(num * num0),
+  div: (num, num0) => Math.floor(num / num0),
+  sub: (num, num0) => Math.floor(num - num0),
+  add: (num, num0) => Math.ceil(num + num0),
 };
 
 module.exports = calculator;
