@@ -16,6 +16,12 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  if (nome === ' ') {
+    console.log('abc');
+  }
+};
+
+vqv('', '');
 
 module.exports = vqv;
