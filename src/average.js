@@ -20,15 +20,14 @@ const average = (array) => {
   }
 
   for (let index = 0; index < array.length; index += 1) {
-    if ((typeof (array[index]) !== 'number') || (array.length === 0)) {
+    if (typeof (array[index]) !== 'number') {
       return undefined;
-    } 
+    }
     resultadoSoma += array[index];
   }
-
-  const media = (resultadoSoma / array.length);
-  return Math.round(media);
+  const media = Math.round(resultadoSoma / array.length);
+  return media;
 };
-console.log(average([]));
 
+console.log(average([1, 2, '3']));
 module.exports = average;
