@@ -29,3 +29,8 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
+const objRaio3 = { radius: 3, area: 3.14 * 3 * 3, circumference: 2 * 3.14 * 3 };
+const objRaio = { radius: 3, area: 3.14 * 3 * 3, circumference: 2 * 3.14 * 3 };
+console.log(Object.values(objRaio3) === Object.values(objRaio));
+const keys = Object.keys(objRaio);
+console.log(objRaio[keys[0]] === objRaio3[keys[0]]);
