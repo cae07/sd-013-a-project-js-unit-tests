@@ -12,7 +12,17 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (array) => {
+  if (array.length === 0) { return undefined; }
+
+  for (const i of array) {
+    if (typeof i !== 'number') { return undefined; }
+  }
+
+  const soma = array.reduce((a, b) => a + b, 0);
+  const media = soma / (array.length);
+  return Math.round(media);
+};
 
 module.exports = average;
-//bora commit
+// bora commit
