@@ -36,7 +36,8 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(typeof productDetails('ovo', 'maizena')[0], 'object');
     assert.strictEqual(typeof productDetails('ovo', 'maizena')[1], 'object');
     assert.notDeepStrictEqual(productDetails('ovo', 'maizena')[0], productDetails('ovo', 'maizena')[1]);
-    assert.strictEqual(productDetails('ovo', 'maizena')[0].details.productId.slice(-3), '123')
+    assert.strictEqual(productDetails('ovo', 'maizena')[0].details.productId.slice(-3), '123');
+    assert.strictEqual(productDetails('ovo', 'maizena')[1].details.productId.slice(-3), '123');
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
