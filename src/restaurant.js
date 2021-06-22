@@ -81,18 +81,19 @@
 
   const createMenu = (myMenu) => {
     const orderFromMenu = (request) => {
-      createMenu().consumption.push(request);
+      restaurant.consumption.push(request);
     };
     const restaurant = {
       fetchMenu: () => myMenu,
       consumption: [],
-      order: orderFromMenu,
+      // order: (request) => {
+      //   restaurant.consumption.push(request);
+      // },
     };
     return restaurant;
   };
 
   const objetoRetornado = createMenu({ food: {}, drink: {} });
   objetoRetornado.order('coxinha');
-  objetoRetornado.consumption.push('oi');
   console.log(objetoRetornado.consumption);
   module.exports = createMenu;
