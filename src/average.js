@@ -13,15 +13,19 @@
 */
 
 const average = (array) => {
-  if (array === true % array.length > 0) {
-    let numeroSaida = 0;
-    for (let i = 0; i < array.length; i += 1) {
-      const numeroNovo = Math.round(array[i]);
-      numeroSaida += numeroNovo / array.length;
-    }
-    return numeroSaida;
+  let media = 0;
+  if (array.length === 0 || array === null) {
+    return undefined;
   }
-  return undefined;
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
+    media += array[i];
+  }
+  media = Math.round(media / array.length);
+  return media;
 };
 
 module.exports = average;
