@@ -13,7 +13,22 @@
 */
 
 const average = (arrayReceived) => {
-  
+  let sum = 0;
+  if (arrayReceived.length === 0) {
+    return undefined;
+  }
+  // eslint-disable-next-line guard-for-in
+  for (let index in arrayReceived) {
+    sum += arrayReceived[index];
+  }
+  for (let index of arrayReceived) {
+    if (typeof (index) !== 'number') {
+      return undefined;
+    }
+  }
+  return Math.round(sum / arrayReceived.length);
 };
+
+console.log(average([3, 4, 5]));
 
 module.exports = average;
