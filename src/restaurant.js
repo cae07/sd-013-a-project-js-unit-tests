@@ -80,35 +80,27 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 // PASSO 01 / PASSO 02 / PASSO 03
-const restaurante = {};
-
-const consumptionValue = (chave, j) => {
-  for (let i = 0; i < chave.length; i += 1) {
-    if (restaurante.consumption[j] === chave[i][0]) {
-      return chave[i][1];
-    }
-  }
-  return 0;
+const createMenu = (obj) => {
+  const objReturn = {
+    fetchMenu: () => obj,
+    consumption: [],
+    order: (string) => {
+      objReturn.consumption.push(string);
+    },
+    pay: () => {
+      let valor = 0;
+      let items = [];
+      items = items.concat(Object.entries(obj.food), Object.entries(obj.drink));
+      for (let i = 0; i < objReturn.consumption.length; i += 1) {
+        const currItem = objReturn.consumption[i];
+        const currItemObj = items.find((item) => item[0] === currItem);
+        if (currItemObj) {
+          valor += currItemObj[1];
+        }
+      }
+      return valor;
+    },
+  };
+  return objReturn;
 };
-
-const paraPagar = (chave) => {
-  let pagar = 0;
-  for (let j = 0; j < restaurante.consumption.length; j += 1) {
-    pagar += consumptionValue(chave, j);
-  }
-  return pagar;
-};
-
-const orderFromMenu = (request) => restaurante.consumption.push(request);
-
-const createMenu = (objeto) => Object.assign(restaurante, {
-  fetchMenu: objeto,
-  consumption: [],
-  order: (request) => orderFromMenu(request),
-  pay: () => paraPagar(Object.entries(restaurante.fetchMenu.food))
-  + paraPagar(Object.entries(restaurante.fetchMenu.drink)),
-});
-
-console.log(createMenu({ food: {}, drink: {} }));
-
 module.exports = createMenu;
