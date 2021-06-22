@@ -38,8 +38,8 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(typeof products[0], 'object');
     assert.strictEqual(typeof products[1], 'object');
     assert.notStrictEqual(JSON.stringify(products[0]) === JSON.stringify(products[0]), false);
-    const product0 = product[0].details.productId;
-    const product1 = product[1].details.productId;
+    const product0 = products[0].details.productId;
+    const product1 = products[1].details.productId;
     assert.strictEqual(product0.substr(product0.length - 3), '123');
     assert.strictEqual(product1.substr(product1.length - 3), '123'); 
 
