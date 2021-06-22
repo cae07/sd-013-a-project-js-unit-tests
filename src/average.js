@@ -15,17 +15,17 @@
 const average = (array) => {
   let total = 0;
   
-  if (array.length === 0){
-    return undefined
+  if (array.length === 0) {
+    return undefined;
   }
   for (let i of array) {
-    if (typeof i === "string") {
-      return undefined
+    if (typeof i === 'string') {
+      return undefined;
     }
     total += i;
   }
   total /= array.length;
-  let arredondado = Math.round(total)
+  let arredondado = Math.round(total);
   return (arredondado);
 };
 
