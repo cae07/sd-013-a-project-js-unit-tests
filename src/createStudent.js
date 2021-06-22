@@ -16,12 +16,12 @@
 */
 
 const createStudent = (entrada) => {
-  if(typeof(entrada) === "string"){
-    return{
+  if (typeof (entrada) === 'string') {
+    return {
       name: entrada,
-      feedback: feedback = () => {return "Eita pessoa boa!"}
+      feedback: () => 'Eita pessoa boa!',
     
-    }
+    };
   }
 };
 
