@@ -16,6 +16,17 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  const strTypeNome = typeof nome;
+  const strTypeOfIdade = typeof idade;
+    if (strTypeNome === 'string' && strTypeOfIdade === 'number') {
+      const line1 = `Oi, meu nome é ${nome}!\n`;
+      const line2 = `Tenho ${idade} anos,\n`;
+      const line3 = 'trabalho na Trybe e mando muito em programação!\n';
+      const line4 = '#VQV!';
+      const strOutput = line1.concat(line2, line3, line4);
+      return strOutput;
+}
+};
 
 module.exports = vqv;
