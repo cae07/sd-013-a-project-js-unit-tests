@@ -14,20 +14,21 @@
 // Referencia https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
 
 const average = (arr) => { 
+  if (arr.length === 0) {
+    return undefined;
+  } 
+
   for (let v of arr) {
     if (typeof (v) !== 'number') {
       return undefined;
-    }
-  }  
-  if (Array.isArray(arr) === 0 || arr.length === 0) {
-    return undefined;
-  } else {    
-    let soma = 0;
-    for (let v of arr) {    
-      soma += v;    
-    }
-    return Math.round(soma / arr.length);
+    }   
   }   
+    
+  let soma = 0;
+  for (let v of arr) {    
+    soma += v;    
+  }
+return Math.round(soma / arr.length);    
 };
  
 module.exports = average;
