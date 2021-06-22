@@ -16,14 +16,15 @@
 */
 
 const myCounter = () => {
-  var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
+  let myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+    for (let counter1 = 2; counter1 <= 3; counter1 += 1) {
+      myArray.push(counter1);
     }
   }
   return myArray;
 };
 
 module.exports = myCounter;
+// o var vaza do escopo de bloco acima, dessa forma foi substituido por let e ambos for estavam iguais, tendo sido modificado o segundo. 

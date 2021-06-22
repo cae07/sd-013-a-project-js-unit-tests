@@ -18,7 +18,13 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
-
-const calculator = {};
+  const calculator = {   
+    add: (a, b) => Math.floor(a + b),
+    mult: (c, d) => Math.floor(c * d),
+    div: (e, f) => Math.floor(e / f),
+    sub: (g, h) => Math.floor(g - h),
+  };
 
 module.exports = calculator;
+
+// Com o auxílio do método 'Math.floor()' o valor da aperação aritmética retornado é arredondado para baixo.
