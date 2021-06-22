@@ -16,19 +16,18 @@ const average = (array) => {
     return undefined;
   } 
   let sum = 0;
-  for ( index in array) {
-    if (typeof(array[index]) !== 'number') {
+  for (let index in array){
+    if (typeof (array[index]) !== 'number') {
       return undefined;
-    } else {
-      sum += array[index];
-    };     
-  };
+    } 
+    sum += array[index];  
+  }
   let media = 0;
   let res = 0;
-  media = sum/array.length;
+  media = sum / array.length;
   res = Math.round(media);
   return res;
-};
+}
 
 average([3, 4, 5]);
 
