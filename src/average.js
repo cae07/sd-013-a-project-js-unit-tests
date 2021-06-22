@@ -18,12 +18,12 @@ const average = (param) => {
     return undefined;
   }
   for (let i = 0; i < param.length; i += 1) {
-    if (typeof(param[i]) !== "number") {
+    if (typeof (param[i]) !== 'number') {
       return undefined;
     }
-    sum += param[i]
+    sum += param[i];
   }
-  let media = Math.round(sum / param.length)
+  let media = Math.round(sum / param.length);
   return media;
 };
 module.exports = average;
