@@ -15,18 +15,16 @@
 const average = (listaDeNumeros) => {
   let soma = 0;
   if (!listaDeNumeros.length) {
-    return undefined
+    return undefined;
   }
-
-  for (numero of listaDeNumeros) {
+  for (let numero of listaDeNumeros) {
     if (typeof (numero) === 'number') {
-      soma += numero
+      soma += numero;
     } else {
-      return undefined
+      return undefined;
     }
   }
-
-  return Math.round(soma / listaDeNumeros.length)
+  return Math.round(soma / listaDeNumeros.length);
 };
 
 module.exports = average;
