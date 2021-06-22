@@ -12,14 +12,13 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-//Ref: https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
-
+// Ref: https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
 const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
 
-  for (let i = 0; i < array.length; i +=1) {
+  for (let i = 0; i < array.length; i += 1) {
     if (Number.isNaN(array[i])) {
       return undefined;
     }
@@ -32,13 +31,14 @@ const average = (array) => {
     newArray.push(itg);
   }
 
-  const x = newArray.reduce((a, b) => a + b, 0);
-  const y = x / newArray.length;
+  const x = newArray.reduce((a, b) => a + b, 0) / newArray.length;
 
-  if (y >= 0) {
-    return Math.floor(y);
-  } else {
-    return Math.ceil(y);
+  if (x >= 0) {
+    return Math.floor(x);
+  } 
+  
+  if (x < 0) {
+    return Math.ceil(x);
   }
 };
 
