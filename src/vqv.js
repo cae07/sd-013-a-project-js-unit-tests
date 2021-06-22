@@ -17,8 +17,6 @@
 */
 
 const vqv = (nome, idade) => {
-  console.log(nome, idade)
-
   if (typeof nome === 'undefined' && typeof idade === 'undefined') {
     return undefined;
   }
@@ -29,5 +27,4 @@ trabalho na Trybe e mando muito em programação!
 #VQV!`;
 };
 
-console.log(vqv())
 module.exports = vqv;
