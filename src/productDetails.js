@@ -39,4 +39,6 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+console.log(productDetails('omo', 'ipe')[0].details.productId);
+
 module.exports = productDetails;
