@@ -12,8 +12,35 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // add your implementation here
+const average = (array) => {
+// Verifica se o array está vazio:
+  if (array.length === 0) {
+    return undefined;
+  }
+
+// Verifica se algum elemento do array NÃO é um número:
+  for (const index in array) {
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+  }
+  
+// Calcula a média dos números dentro do array:
+  let soma = 0;
+
+  for (let index = 0; index < array.length; index += 1) {
+    soma += array[index];
+  }
+
+  return Math.round(soma / array.length);
 };
+
+// console.log(average([10, 27, 30]));
+
+const assert = require('assert');
+
+assert.strictEqual(average([]), undefined);
+assert.strictEqual(average([5, '7']), undefined);
+assert.strictEqual(average([1, 6]), 4);
 
 module.exports = average;
