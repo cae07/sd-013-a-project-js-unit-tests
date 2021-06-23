@@ -16,6 +16,21 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+// Verifica se a função é chamada sem argumentos:
+  if (nome === undefined || idade === undefined) {
+    return undefined;
+  } 
+
+// Escreve parágrafo com os parâmetros fornecidos:
+    const msg = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+
+    return msg;
+};
+
+// console.log(vqv('João', 20));
 
 module.exports = vqv;
