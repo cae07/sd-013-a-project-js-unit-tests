@@ -81,14 +81,12 @@
 
 const consumption = [];
 
-const onder = (text) => {
-   consumption.push(text);
-};
-
 const createMenu = (obj) => ({
     fetchMenu: () => obj,
     consumption,
-    onder,
+    onder: (text) => {
+      consumption.push(text);
+    },
   });
 
 module.exports = createMenu;
