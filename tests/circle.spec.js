@@ -42,3 +42,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     
   });
 });
+
+//Observações:
+//No segundo o resultado é o numero de chaves dentro do objeto através do length.
+//Demorei um pouco para entender a função do toPrecision que retorna a quantidade de numeros válidos (tanto antes, como depois do ponto) que eu desejo na expressão. E como ele retorna uma string, é necessário o parseFloat para transformar o resutado da expressão em number.
