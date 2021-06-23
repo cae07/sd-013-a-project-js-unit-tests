@@ -16,6 +16,7 @@
       #VQV!'
 */
 
+// Requisito 3
 const vqv = (nome, idade) => {
   if (nome === undefined && idade === undefined) {
   return undefined;

@@ -16,6 +16,7 @@ const numbers = require('../src/numbers');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
+// Requisito 2
 describe('2 - Implemente os casos de teste para a função `numbers`', () => {
   it('Verifica se a função `numbers`retorna um array e se o array retornado contém somente números', () => {
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
