@@ -19,13 +19,12 @@ const average = (array) => {
       return undefined;
     }
     for (let index = 0; index < array.lenght; index += 1) {
-      if (typeof array[index] !== 'number') {
+      if (typeof (array[index]) !== 'number') {
         return undefined;
       }
-      soma += (array[index]);
+      soma += array[index];
     }
-    const output = (soma / array.lenght);
-    return Math.round(output);
+    return Math.round(soma / array,length);
   };
 
 module.exports = average;
