@@ -48,30 +48,33 @@ const createMenu = require('../src/restaurant');
 
 describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    assert.fail();
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui, 
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
-    // ```
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
-    // ```
+    const teste1 = createMenu();
+    assert.deepStrictEqual(typeof teste1.fetchMenu,'function');
+
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
-    // ```
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
-    // ```
+    const teste2 = createMenu({food: {},drinks: {}});
+    assert.deepStrictEqual(teste2.fetchMenu(), {food: {}, drinks: {}});
+
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
-    // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
-    // ```
+    const teste3 = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+    assert.deepStrictEqual(teste3, createMenu(teste3).fetchMenu());
+
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
-    // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
-    // ```
+    // assert.deepStrictEqual(objetoRetornado.consumption, [])
+
+
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
