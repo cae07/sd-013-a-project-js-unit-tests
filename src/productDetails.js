@@ -38,5 +38,3 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
-module.exports = productDetails;
