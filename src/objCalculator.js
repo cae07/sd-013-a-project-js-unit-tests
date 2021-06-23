@@ -25,6 +25,5 @@ const calculator = {
   mult: (num1, num2) => num1 * num2,
   sub: (num1, num2) => num1 - num2,
 };
-console.log(calculator.div(3, 2))
 
 module.exports = calculator;
