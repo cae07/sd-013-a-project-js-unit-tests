@@ -44,18 +44,7 @@
 
   IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE ARQUIVO!
 */
-
-// PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-//
-// Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
-
-//------------------------------------------------------------------------------------------
-
-// PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
-//
-// Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
-
-//------------------------------------------------------------------------------------------
+let total;
 
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
@@ -70,6 +59,7 @@
 //
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
 // // Essa função deve ser associada à chave `order` de `restaurant`
+
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
@@ -79,6 +69,45 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+function checkMenu(item) {
+  const foodMenu = total.fetchMenu().food;
+  const drinkMenu = total.fetchMenu().drink;
+  const completeMenu = {};
+  Object.assign(completeMenu, foodMenu, drinkMenu);
+  return completeMenu[item];
+}
+
+function pagamento() {
+  let pgTotal = 0;
+  const consumo = Object.values(total.consumption);
+  for (const i of consumo) {
+    pgTotal += checkMenu(i);
+  }
+  return (pgTotal * 1.1).toFixed(2);
+}
+
+// PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
+// PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
+//------------------------------------------------------------------------------------------
+function orderFromMenu(order) {
+  const string = order;
+  total.consumption.push(string);
+  return total;
+}
+
+const createMenu = (parametroTeste) => {
+  const objeto = parametroTeste;
+  total = {
+  fetchMenu: () => objeto,
+  consumption: [],
+  order: (request) => orderFromMenu(request),
+  pay: () => pagamento(),
+  };
+  return total;
+};
+// Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
+// Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
+
+//------------------------------------------------------------------------------------------
 
 module.exports = createMenu;
