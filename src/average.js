@@ -37,10 +37,4 @@ const average = (array) => {
 
 // console.log(average([10, 27, 30]));
 
-const assert = require('assert');
-
-assert.strictEqual(average([]), undefined);
-assert.strictEqual(average([5, '7']), undefined);
-assert.strictEqual(average([1, 6]), 4);
-
 module.exports = average;
