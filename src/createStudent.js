@@ -24,4 +24,6 @@ const createStudent = (nome) => {
   return estudante;
 };
 
+// console.log(createStudent('Elio'));
+
 module.exports = createStudent;
