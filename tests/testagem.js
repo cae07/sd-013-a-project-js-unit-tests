@@ -1,11 +1,12 @@
-const circle = (radius) => {
-  const PI = 3.14;
-  if (!radius) { return undefined; }
-  return {
-    radius,
-    area: PI * radius * radius,
-    circumference: 2 * PI * radius,
+const createStudent = (nome) => {
+  const newStudent = {
+    name: nome,
+    feedback: () => {
+      const frase = 'Eita pessoa boa!';
+      return frase;
+    },
   };
+  return newStudent;
 };
 
-console.log(circle(3));
+console.log(createStudent('Rafael', feedback()));
