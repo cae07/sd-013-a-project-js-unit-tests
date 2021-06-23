@@ -15,6 +15,9 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+// lint não deixa tirar os parenteses
+// https://mariusschulz.com/blog/returning-object-literals-from-arrow-functions-in-javascript
+
+const createStudent = (nome) => ({ name: nome, feedback: () => 'Eita pessoa boa!' });
 
 module.exports = createStudent;
