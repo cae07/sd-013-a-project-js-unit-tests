@@ -11,6 +11,9 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+
+const assert = require('assert');
+
 const average = (arr) => {
 let resultado = 0;
 let ehNumero = 2;
