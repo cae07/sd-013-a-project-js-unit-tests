@@ -12,6 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (array) => {
+  let soma = 0;
+  let verificador = '';
+  array.forEach((numeros) => {
+    soma += numeros;
+    if ((typeof numeros !== 'number') || (array[0] === '')) {
+      verificador = undefined;
+    }
+  });
+  let calculo = Math.round(soma / array.length); 
+  if ((verificador !== undefined) && (!Number.isNaN(calculo))) {
+    return calculo;
+  }
+  return undefined;
+};
 
 module.exports = average;
