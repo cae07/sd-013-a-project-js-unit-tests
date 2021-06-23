@@ -89,7 +89,7 @@ const createMenu = (pedido) => {
     },
     consumption,
     pay: () => {
-      const allMenu = Object.assign({}, pedido.food, pedido.drink);
+      const allMenu = { ...pedido.food, ...pedido.drink };
       let total = 0;
       consumption.forEach((item) => {
         for (const key in allMenu) {
