@@ -18,7 +18,7 @@
 
 const vqv = (nome, idade) => {
   
-  if ((nome && idade) === undefined ) {
+  if (!nome && !idade) {
     return undefined;
   }
 
@@ -29,6 +29,6 @@ trabalho na Trybe e mando muito em programação!
 
 };
 
-console.log(vqv('Tunico', 30));
+console.log(vqv());
 
 module.exports = vqv;
