@@ -38,6 +38,8 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(circle(3).area, PI * 3 * 3);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.strictEqual(Object.values(circle(3)), [3, (PI * 3 * 3), (2 * PI * 3)]);
+    // Não funcionava ao usar o strictEqual, passei no código do @rafhaeldeandrade
+    // E vi sobre a função deepStrictEqual em que serve para comparar objetos e seus atributos.
+    assert.deepStrictEqual(Object.values(circle(3)), [3, (PI * 3 * 3), (2 * PI * 3)]);
   });
 });
