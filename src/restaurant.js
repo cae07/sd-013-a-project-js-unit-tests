@@ -80,13 +80,38 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const consumption = [];
-
+let soma = 0
 const createMenu = (obj) => ({
-    fetchMenu: () => obj,
-    consumption,
-    onder: (text) => {
-      consumption.push(text);
-    },
-  });
+  fetchMenu: () => obj,
+  consumption: consumption,
+  order: (text) => {
+    consumption.push(text);
+  },
+  pay: () => {
+    let soma = 0
+    consumption.forEach((item) => {
+      if(obj.food[item]){
+        soma += obj.food[item]
+      }
+    })
+
+    consumption.forEach((item) => {
+      if(obj.drinks[item]){
+        soma += obj.drinks[item]
+      }
+    })
+    return soma
+  }
+});
+const t = createMenu({
+  food: {
+    'coxinha': 3.90,
+    'sanduiche': 9.90
+  },
+  drinks: {
+    'agua': 3.90,
+    'cerveja': 6.90
+  }
+})
 
 module.exports = createMenu;
