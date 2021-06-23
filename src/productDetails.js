@@ -24,6 +24,8 @@
   ]
 */
 
+const { parse } = require("acorn");
+
 const productDetails = (firstProduct, secondProduct) => [
   {
     name: firstProduct,
