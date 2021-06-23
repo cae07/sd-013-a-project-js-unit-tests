@@ -14,7 +14,7 @@
 const average = (arr) => {
 let resultado = 0;
 let ehNumero = 2;
-  if (arr.length === 0) { return undefined };
+  if (arr.length === 0) { return undefined;}
   for (let index = 0; index < arr.length; index += 1) {
     if (typeof arr[index] !== typeof ehNumero) {
         return undefined;
@@ -22,6 +22,6 @@ let ehNumero = 2;
     resultado += arr[index];
   }
   return Math.round(resultado / arr.length);
-}
-console.log(average([1,'a']));
+};
+console.log(average([1, 'a']));
 module.exports = average;
