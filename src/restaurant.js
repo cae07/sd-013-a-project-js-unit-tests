@@ -99,7 +99,7 @@ function createMenu(obj) {
       for (let i = 0; i < consume.length; i += 1) {
         total += objPrices[consume[i]];
       }
-      return total;
+      return total * 1.1;
     },
   };
 }

@@ -136,7 +136,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     testObj6.order("coxinha");
     testObj6.order("agua");
     testObj6.order("cerveja");
-    assert.strictEqual(testObj6.pay(), (3.90 + 3.90 + 6.90));
+    assert.strictEqual(testObj6.pay(), (3.90 + 3.90 + 6.90) * 1.1);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
