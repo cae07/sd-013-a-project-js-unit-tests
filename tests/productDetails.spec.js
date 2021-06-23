@@ -44,5 +44,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const output = productDetails('Alcool gel', 'Máscara');
     assert.strictEqual(Object.values(output)[0].details['productId'] === 'Alcool gel123', true);
     assert.strictEqual(Object.values(output)[1].details['productId'] === 'Máscara123', true);
+    assert.strictEqual(Object.values(output)[0].details['productId'].includes('123'), true);
+    assert.strictEqual(Object.values(output)[1].details['productId'].includes('123'), true);
   });
 });
