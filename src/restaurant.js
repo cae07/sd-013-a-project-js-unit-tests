@@ -79,21 +79,28 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-  const createMenu = (myMenu) => {
-    const orderFromMenu = (request) => {
-      restaurant.consumption.push(request);
-    };
-    const restaurant = {
-      fetchMenu: () => myMenu,
-      consumption: [],
-      // order: (request) => {
-      //   restaurant.consumption.push(request);
-      // },
-    };
-    return restaurant;
-  };
+const orderFromMenu = function (request) {
+  this.consumption.push(request);
+};
 
-  const objetoRetornado = createMenu({ food: {}, drink: {} });
-  objetoRetornado.order('coxinha');
-  console.log(objetoRetornado.consumption);
+// Trecho realizado com a ajuda de Bianca Caetano, Luiz Furtado e Matheus Freitas
+const payOrder = function () {
+  const foods = { ...this.fetchMenu().drink, ...this.fetchMenu().food };
+  let total = 0;
+  this.consumption.forEach((food) => {
+    total += foods[food];
+  });
+  return total * 1.1;
+};
+
+const createMenu = (myMenu) => {
+  const restaurant = {
+    fetchMenu: () => myMenu,
+    consumption: [],
+    order: orderFromMenu,
+    pay: payOrder,
+  };
+  return restaurant;
+};
+
   module.exports = createMenu;
