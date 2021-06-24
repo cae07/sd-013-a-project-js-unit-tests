@@ -22,7 +22,7 @@
 // const a = 0;
 // const b = 0;
 const adition = (a, b) => Math.floor(a + b);
-const  multiplication = (a, b) => Math.floor(a * b);
+const multiplication = (a, b) => Math.floor(a * b);
 const division = (a, b) => Math.floor(a / b);
 const subtraction = (a, b) => Math.floor(a - b);
 
