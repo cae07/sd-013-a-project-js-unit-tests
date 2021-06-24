@@ -82,10 +82,14 @@
 const createMenu = () => {
   const fetchMenu = {
     fetchMenu: () => {
-
-    },
-  };
-  return fetchMenu;
+      let menu = {
+        food: {},
+        drink: {},
+      }
+      return menu
+    }
+  }
+  return fetchMenu
 };
 
 module.exports = createMenu;
