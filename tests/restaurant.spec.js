@@ -49,10 +49,8 @@ const createMenu = require('../src/restaurant');
 describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
 
-    const param = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
-    
+    const param = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };    
     // assert.fail();
-
 
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui, 
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
@@ -60,8 +58,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
     // const menu = createMenu(param);
-    assert.deepStrictEqual(toString(createMenu()),toString({fetchMenu: () => {}}));
-  
+    assert.deepStrictEqual(toString(createMenu()),toString({fetchMenu: () => {}}));  
 
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
@@ -70,16 +67,9 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
 
-
-
      const req2 = createMenu({food: {}, drink: {}}); // Chama a function passando os parametros
      const item2 = Object.keys(req2.fetchMenu()); // pega as chaves dos objeto
      assert.deepStrictEqual(item2, [ 'food', 'drink' ]);
-    
-
-
-
-
 
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
@@ -87,15 +77,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
 
-
-
-
     assert.deepStrictEqual(createMenu({food: {}, drink: {}}).fetchMenu(), {food: {}, drink: {}})
-    
-
-
-
-
 
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -119,8 +101,6 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
      const req5 = createMenu()
     assert.strictEqual(req5.consumption,['coxinha'])
-
-
 
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
