@@ -16,6 +16,8 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  // add your implementation here
+};
 
 module.exports = vqv;
