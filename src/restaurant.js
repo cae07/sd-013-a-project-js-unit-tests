@@ -81,7 +81,6 @@
 
 const createMenu = () => {
 
-  fetchMenu: () => 
 };
 
 module.exports = createMenu;
