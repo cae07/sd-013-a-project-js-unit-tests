@@ -85,7 +85,18 @@ const createMenu = (object) => {
     fetchMenu: () => object,
     consumption: arrConsumption,
     order: (strKey) => arrConsumption.push(strKey),
-    pay: () => {},
+    pay: () => {
+      let arrValue = [];
+      for (let index = 0; index < arrConsumption.length; index += 1) {
+        let chave = arrConsumption[index];
+        let valueOfFood = object.food[chave];
+        let valueOfDrink = object.drink[chave];
+        if (valueOfFood !== undefined) arrValue.push(valueOfFood);
+        if (valueOfDrink !== undefined) arrValue.push(valueOfDrink);
+      }
+      const arrTotal = arrValue.reduce((acc, item) => (acc + (item * 1.10)), 0);
+      return arrTotal;
+    },
   };
   return output;
 };

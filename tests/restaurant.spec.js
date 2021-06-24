@@ -108,11 +108,13 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.order("agua");
-    // objetoRetornado.order("sopa");
-    // objetoRetornado.order("sashimi");
-    // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
+    const objetoRetornado6 = createMenu(objMenuzin);
+    objetoRetornado6.order("pastel de queijo");
+    objetoRetornado6.order("água com gás");
+    objetoRetornado6.order("coquetel de frutas");
+    objetoRetornado6.order("asa de galinha");
+    const ordersUpdate = objetoRetornado6.consumption // Retorno: ["pastel de queijo", "água com gás", "coquetel de frutas", "asa de galinha"]
+    assert.strictEqual(ordersUpdate.length === 4, true)
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -122,6 +124,14 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
+
+    const objetoRetornado7 = createMenu(objMenuzin);
+    objetoRetornado7.order("coquetel de frutas");
+    objetoRetornado7.order("asa de galinha");
+    objetoRetornado7.order("asa de galinha");
+    objetoRetornado7.order("asa de galinha");
+    const ordersUpdate7 = objetoRetornado7.consumption // Retorno: ["coquetel de frutas", "asa de galinha", "asa de galinha", "asa de galinha"]
+    assert.strictEqual(ordersUpdate7[1] === 'asa de galinha' && ordersUpdate7[2] === 'asa de galinha' && ordersUpdate7[3] === 'asa de galinha', true);
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -132,6 +142,13 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
+    const objetoRetornado8 = createMenu(objMenuzin);
+    objetoRetornado8.order("coquetel de frutas");
+    objetoRetornado8.order("asa de galinha");
+    objetoRetornado8.order("asa de galinha");
+    objetoRetornado8.order("asa de galinha");
+    const fltTotal = objetoRetornado8.pay()
+    assert.strictEqual(fltTotal, 19.756, true);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
