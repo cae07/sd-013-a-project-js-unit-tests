@@ -36,24 +36,26 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     };
     assert.deepStrictEqual(resultadoReal, resultadoEsperado);
     // Teste se o objeto retornado tem 3 entradas.
-    const resultadoReal2 = 0;
-    const resultadoEsperado2 = Object.keys(resultadoReal2).length;
-    assert.deepStrictEqual(resultadoReal2, resultadoEsperado2);
+    const resultadoReal2 = circle(1);
+    const resultadoEsperado2 = 3;
+    assert.deepStrictEqual(Object.keys(resultadoReal2).length, resultadoEsperado2);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     const resultadoReal3 = circle();
     const resultadoEsperado3 = undefined;
     assert.deepStrictEqual(resultadoReal3, resultadoEsperado3);
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    const resultadoReal4 = { circumference: 12.56 };
-    const resultadoEsperado4 = { circumference: 2 * 3.14 * 2 };
-    assert.deepStrictEqual(resultadoReal4, resultadoEsperado4);
+    const resultadoReal4 = circle(2);
+    const resultadoEsperado4 = 2 * 3.14 * 2;
+    assert.deepStrictEqual(resultadoReal4.circumference, resultadoEsperado4);
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    const resultadoReal5 = NaN;
-    const resultadoEsperado5 = parseFloat({ area: 3.14 * 3 * 3 });
-    assert.deepStrictEqual(resultadoReal5, resultadoEsperado5);
+    const resultadoReal5 = circle(3);
+    const resultadoEsperado5 = 3.14 * 3 * 3;
+    assert.deepStrictEqual(resultadoReal5.area, resultadoEsperado5);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    const resultadoReal6 = NaN;
-    const resultadoEsperado6 = parseFloat({ radius: 3, area: 28.26, circumference: 18.84 });
-    assert.deepStrictEqual(resultadoReal6, resultadoEsperado6);
+    const resultadoReal6 = circle(3);
+    const resultadoEsperado6 = { radius: 3, area: 28.26, circumference: 18.84 };
+    assert.deepStrictEqual(parseFloat(resultadoReal6.area).toPrecision(2), parseFloat(resultadoEsperado6.area).toPrecision(2));
+    assert.deepStrictEqual(resultadoReal6.circumference, resultadoEsperado6.circumference);
+    assert.deepStrictEqual(resultadoReal6.radius, resultadoEsperado6.radius);
   });
 });
