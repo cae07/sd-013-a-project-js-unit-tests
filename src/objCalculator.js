@@ -23,7 +23,7 @@ const calculator = {
 
   add: (int1, int2) => (int1 + int2),
   mult: (int1, int2) => (int1 * int2),
-  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor 
   div: (int1, int2) => Math.floor(int1 / int2),
   sub: (int1, int2) => (int1 - int2),
 };
