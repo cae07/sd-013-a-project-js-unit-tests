@@ -88,8 +88,10 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.consumption // Retorno: []
+    const objetoRetornado4 = createMenu(objMenuzin);
+    // objetoRetornado4.consumption // Retorno: []
+    assert.strictEqual(Array.isArray(objetoRetornado4.consumption), true);
+    assert.strictEqual(objetoRetornado4.consumption.length === 0, true);
     // ```
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
