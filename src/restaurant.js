@@ -97,9 +97,9 @@ const createMenu = (objeto) => {
       let aux = 0;
       const foodsDrinks = { ...this.fetchMenu().food, ...this.fetchMenu().drink };
       for (let i = 0; i < this.consumption.length; i += 1) {
-        let atual = this.consumption[i];
-        let valorPedido = Object.values(foodsDrinks[atual]);
-        aux += valorPedido[0];
+        let itemPedido = this.consumption[i];
+        let valorDoItem = Object.values(foodsDrinks[itemPedido]);
+        aux += valorDoItem[0];
       }
       return aux * 1.1;
     },
