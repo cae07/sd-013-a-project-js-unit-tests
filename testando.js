@@ -1,10 +1,11 @@
-const vqv = (nome, idade) => {
-    let mostrar =`Oi, meu nome é ${nome}!
-    Tenho ${idade} anos,
-    trabalho na Trybe e mando muito em programação!
-    #VQV!`;
-
-    return console.log(`${mostrar}`);
+const circle = (radius) => {
+  const PI = 3.14;
+  if (!radius) { return undefined; }
+  return {
+    radius,
+    area: PI * radius * radius,
+    circumference: 2 * PI * radius,
   };
-  
- console.log(vqv('samuel', 27));
+};
+
+console.log(circle(2));
