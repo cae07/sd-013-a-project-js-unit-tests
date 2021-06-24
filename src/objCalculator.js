@@ -19,16 +19,18 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-// let adition = a + b;
-// let multiplication = a * b;
-// let division = a / b;
-// let subtraction = a - b;
+// const a = 0;
+// const b = 0;
+const adition = (a, b) => Math.floor(a + b);
+const  multiplication = (a, b) => Math.floor(a * b);
+const division = (a, b) => Math.floor(a / b);
+const subtraction = (a, b) => Math.floor(a - b);
 
 const calculator = {
-  // add: adition,
-  // mult: multiplication,
-  // div: division,
-  // sub: subtraction,
+  add: adition,
+  mult: multiplication,
+  div: division,
+  sub: subtraction,
 };
 
 module.exports = calculator;
