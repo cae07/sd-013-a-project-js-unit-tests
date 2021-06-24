@@ -18,8 +18,8 @@
 const createStudent = (nome) => {
   const student = {
     name: nome,
-    feedback: () =>  'Eita pessoa boa!', // Cria a arrow function para chamar o feedback.
-  }
+    feedback: () => 'Eita pessoa boa!', // Cria a arrow function para chamar o feedback.
+  };
   return student;
 };
 

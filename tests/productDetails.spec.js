@@ -30,7 +30,12 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    
+    assert.strictEqual(Array.isArray(productDetails()), true);
+    assert.strictEqual(productDetails().length, 2); // Testa se a "length" do objeto realmente é 2.
+    assert.strictEqual(typeof (productDetails()[0]), 'object'); // Testa o tipo do primeiro objeto.
+    assert.strictEqual(typeof (productDetails()[1]), 'object'); // Testa o tipo do segundo objeto.
+    assert.notDeepStrictEqual(productDetails('a', 'b')[0], productDetails('c', 'd')[1]); /* Testa se o primeiro objeto é diferente do segundo. notDeepStrictEqual retirado deste link : https://nodejs.org/api/assert.html#assert_assert_notdeepstrictequal_actual_expected_message */
+    assert.strictEqual(productDetails('productA', 'productB')[0].details.productId.substring(8), '123'); /* Testa se dentro de productId, no final do produto contém a string "123". Utilizei substring a partir deste link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring */
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
