@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } = require('constants');
 const productDetails = require('../src/productDetails');
 
 /*
@@ -30,7 +31,18 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
+    assert.strictEqual(array.isarray(productDetails('um' ,'dois')),true);
+    assert.strictEqual(productDetails('umaCoisa', 'OutraCoisa').length, 2);
+    assert.strictEqual(productDetails('umaCoisa', 'outraCoisa'),Object.entries(productDetails().key))
+    assert.notStrictEqual(products[0], products[1]);
+    
+    //Teste que os dois productIds terminam com 123.
+    const product0 = product[0].details.productId;
+    const product1 = product[1].details.productId;
+
+    assert.strictEqual(product0.substr(product0.length - 3), '123');
+    assert.strictEqual(product1.substr(product1.length - 3), '123');
+   
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
