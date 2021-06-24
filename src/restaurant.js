@@ -85,11 +85,11 @@ const createMenu = () => {
       let menu = {
         food: {},
         drink: {},
-      }
-      return menu
-    }
-  }
-  return fetchMenu
+      };
+      return menu;
+    },
+  };
+  return fetchMenu;
 };
 
 module.exports = createMenu;
