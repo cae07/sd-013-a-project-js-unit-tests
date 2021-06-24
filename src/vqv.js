@@ -24,7 +24,7 @@ const vqv = (nome, idade) => {
     saudacoes += '#VQV!';
     return saudacoes;
   } 
-  return undefined
+  return undefined;
 };
 
 module.exports = vqv;
