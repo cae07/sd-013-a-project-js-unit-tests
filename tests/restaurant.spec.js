@@ -100,9 +100,10 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.order("coxinha");
+    objetoRetornado2.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
-    assert.deepStrictEqual(objetoRetornado2.order("coxinha"), objetoRetornado.consumption);
+    // console.log(objetoRetornado2.order("coxinha"));
+    assert.deepStrictEqual(['coxinha'], objetoRetornado2.consumption);
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -133,7 +134,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
     // objetoRetornado2.pay() // Retorno: somaDosPreçosDosPedidos
-    assert.deepStrictEqual(objetoRetornado2.pay(), 42)
+    assert.deepStrictEqual(objetoRetornado2.pay(), 42 * 1.1);
     // console.log(objetoRetornado2.pay());
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
