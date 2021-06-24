@@ -39,4 +39,6 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+// eslint-disable-next-line max-len
+
 module.exports = productDetails;
