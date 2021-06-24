@@ -1,11 +1,7 @@
-const circle = (radius) => {
-  const PI = 3.14;
-  if (!radius) { return undefined; }
-  return {
-    radius,
-    area: PI * radius * radius,
-    circumference: 2 * PI * radius,
-  };
-};
+const numbers = [19, 21, 30, 3, 45, 22, 15];
 
-console.log(circle(2));
+const findDivisibleBy3And5 = () => {
+  numbers.find((number) => number % 3 === 0 && number % 5 === 0);
+}
+
+console.log(findDivisibleBy3And5())
