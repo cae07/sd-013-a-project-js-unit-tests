@@ -100,7 +100,8 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
      const req5 = createMenu()
-    assert.strictEqual(req5.consumption,['coxinha'])
+     req5.order('coxinha')
+    assert.deepStrictEqual(req5.consumption,['coxinha'])
 
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
