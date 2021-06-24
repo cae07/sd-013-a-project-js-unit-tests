@@ -14,7 +14,7 @@ function createOrder(string) {
   return this.consumption.push(string);
 }
 
-let objetoRetornado = createMenu( {
+let newMenu = createMenu( {
   food: {
     coxinha: 30,
     paçoca: 40,
@@ -29,8 +29,8 @@ let objetoRetornado = createMenu( {
   } 
 } );
 
-objetoRetornado.order("coxinha");
-objetoRetornado.order("coca");
+newMenu.order("coxinha");
+newMenu.order("coca");
 
 function payCalc() {
   let bill = 0;
@@ -49,6 +49,6 @@ function payCalc() {
   return bill * 1.1;
 }
 
-console.log(objetoRetornado.pay());
+console.log(newMenu.pay());
 
 module.exports = createMenu;
