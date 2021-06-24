@@ -12,7 +12,12 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-let array = 1;
+const average = (param) => {
+  let numbers = Math.random(param);
+  if (param != "number" || param === '') {
+    return undefined;
+  }
+  return numbers;
+};
 
 module.exports = average;
