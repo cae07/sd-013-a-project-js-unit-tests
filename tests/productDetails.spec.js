@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { isDeepStrictEqual } = require('util');
 const productDetails = require('../src/productDetails');
 
 /*
@@ -32,9 +33,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     
     assert.strictEqual(Array.isArray (productDetails('prod', 'produto')), true)
-    assert.strictEqual(productDetails[0] && productDetails[1], true)
-    assert.strictEqual(productDetails[0] && productDetails[1], 'object')
-    assert.strictEqual(productDetails[0] !== productDetails[1], true)
+    assert.strictEqual(Object.values(productDetails('prod', 'produto')).length, 2)
+    assert.strictEqual(typeof Object.values(productDetails('prod', 'produto')), 'object')
+    assert.strictEqual(isDeepStrictEqual(productDetails('prod', 'produto')), false)
 
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
