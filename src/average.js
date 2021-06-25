@@ -12,8 +12,28 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  console.log('ok');
+const verifyArray = (array) => {
+  if (Array.isArray(array) === false) return undefined;
+  for (let number of array) {
+    if (typeof number === 'string') return undefined;
+  }
+  return true;
 };
+
+const average = (array) => {
+  const status = verifyArray(array);
+  if (status === undefined) {
+    return undefined;
+  }
+  const sum = array.reduce((a, b) => a + b, 0);
+  const result = Math.round(sum / array.length);
+
+  if (Number.isNaN(result)) return undefined;
+  return result;
+};
+console.log(average([2, '2']));
+console.log(average([2, 2]));
+console.log(average([0, 0, 0, 0, 0, 0, 1]));
+console.log(average([]));
 
 module.exports = average;
