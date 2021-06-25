@@ -19,6 +19,13 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (n1, n2) => n1 + n2, // Soma os dois numeros inteiros.
+  mult: (n1, n2) => n1 * n2, // Multiplica os dois numeros inteiros.
+  div: (n1, n2) => Math.floor(n1 / n2), // Divide e arredonda para baixo os dois numeros inteiros.
+  sub: (n1, n2) => n1 - n2, // Subtrai os dois numeros inteiros.
+};
+
+console.log(calculator.add(1, 2));
 
 module.exports = calculator;
