@@ -79,7 +79,6 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (objeto = Object) => {
-  fetchMenu: () => objeto;
 };
 
 let teste = {
@@ -93,6 +92,4 @@ let teste = {
   },
 };
 
-console.log(createMenu(teste));
-teste.crea
 module.exports = createMenu;
