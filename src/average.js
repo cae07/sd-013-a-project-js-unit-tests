@@ -12,11 +12,15 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-// const array = [2, 2];
-// todo: 1 - retornar média
-// todo: 2 - se receber string || array vazio = undefined
-// todo: 3 - arredondar valores flutuantes para inteiros
+const average = (array) => {
+  const numbersOnly = array.every((element) => {return typeof element === 'number';});
+  if (array.length !== 0 && numbersOnly === true) {
+    let result = array.reduce((a, b) => a + b) / array.length;
+    result = Math.round(result);
+    return result;
+  } else {
+    return undefined;
+  }
 };
 
 module.exports = average;
