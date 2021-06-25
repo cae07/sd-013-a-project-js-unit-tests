@@ -88,8 +88,8 @@ const orderFromMenu = function (string) {
   this.consumption.push(string);
 };
 
-const createMenu = (objeto) => {
-  const menu = {
+const createMenu = (objeto) => 
+   ({
     fetchMenu: () => objeto,
     consumption: [],
     order: orderFromMenu,
@@ -101,8 +101,6 @@ const createMenu = (objeto) => {
       });
       return total * 1.1;
     },
-  };
-  return menu;
-};
+  });
 
 module.exports = createMenu;
