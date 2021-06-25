@@ -89,22 +89,17 @@ const orderFromMenu = function (string) {
 };
 
 const createMenu = (objeto) => {
-  const menu = {
+  return menu = {
     fetchMenu: () => objeto,
     consumption: [],
     order: orderFromMenu,
     pay() {
-      let aux = 0;
+      let total = 0;
       const foodsDrinks = { ...this.fetchMenu().food, ...this.fetchMenu().drink };
-      for (let i = 0; i < this.consumption.length; i += 1) {
-        let itemPedido = this.consumption[i];
-        let valorDoItem = Object.values(foodsDrinks[itemPedido]);
-        aux += valorDoItem[0];
-      }
-      return aux * 1.1;
+      this.consumption.forEach(itemPedido => total += foodsDrinks[itemPedido].valor);
+      return total * 1.1;
     },
   };
-  return menu;
 };
 
 module.exports = createMenu;
