@@ -13,6 +13,7 @@
 */
 
 const average = () => {
+
   //Adicione sua implementação aqui
 };
 
