@@ -13,8 +13,7 @@
 */
 
 const average = () => {
-  //const array = [2, 2];
-
+//const array = [2, 2];
 // todo: 1 - retornar média
 // todo: 2 - se receber string || array vazio = undefined
 // todo: 3 - arredondar valores flutuantes para inteiros
