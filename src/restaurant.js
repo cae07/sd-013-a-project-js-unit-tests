@@ -82,8 +82,10 @@
 const createMenu = (object) => {
   const data = {
     fetchMenu: () => object,
+    consumption: [],
   };
   return data;
 };
-
+// const objetoRetornado = createMenu({ food: {}, drink: {} });
+// console.log(objetoRetornado.consumption);
 module.exports = createMenu;
