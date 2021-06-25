@@ -85,7 +85,5 @@ const createMenu = (object) => {
   };
   return data;
 };
-// objetoRetornado = createMenu({ food: {}, drink: {} })
-// console.log(objetoRetornado.fetchMenu());
 
 module.exports = createMenu;

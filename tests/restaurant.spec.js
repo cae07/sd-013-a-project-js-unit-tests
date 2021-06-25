@@ -62,13 +62,13 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
     const objetoRetornado = createMenu({ food: {}, drink: {} });
-    assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {}});
+    assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), [ 'food', 'drink' ]);
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
-    // AQUI const objetoRetornado = createMenu({ food: {}, drink: {} });
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {}});
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
