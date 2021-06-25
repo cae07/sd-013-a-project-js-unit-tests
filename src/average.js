@@ -13,14 +13,12 @@
 */
 
 const average = (array) => {
-  const numbersOnly = array.every((element) => {return typeof element === 'number';});
+  const numbersOnly = array.every((element) => { typeof element === 'number'; return });
   if (array.length !== 0 && numbersOnly === true) {
     let result = array.reduce((a, b) => a + b) / array.length;
     result = Math.round(result);
     return result;
-  } else {
-    return undefined;
-  }
+  } return undefined;
 };
 
 module.exports = average;
