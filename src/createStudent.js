@@ -23,5 +23,7 @@ const createStudent = (nameStudant) => {
   };
   return estudante;
 };
+// console.log(createStudent('oi').feedback());
+// console.log(createStudent('oi'));
 
 module.exports = createStudent;
