@@ -47,9 +47,6 @@
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 
-function createMenu(menuRestaurante) {
-  return { fetchMenu: () => menuRestaurante };
-}
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -59,6 +56,15 @@ function createMenu(menuRestaurante) {
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
+
+function createMenu(menuRestaurante) {
+  const arrayVazio = [];
+  return {
+    fetchMenu: () => menuRestaurante,
+    consumption: arrayVazio
+  };
+}
+
 
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.

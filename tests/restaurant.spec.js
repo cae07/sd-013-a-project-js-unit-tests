@@ -83,11 +83,19 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
-    // ```
+
+    const objetoRetornado4 = createMenu();
+    const consumption = objetoRetornado4.consumption;
+    const resultadoEsperado3 = [];
+    assert.deepStrictEqual(consumption, resultadoEsperado3);
+
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
+
+
+
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
