@@ -23,7 +23,7 @@ const average = (array) => {
     if (typeof (array[index]) !== 'number') { // olhar item por item e se não for numero retirna undefined
       return undefined; 
     }
-    count += array[index];
+    count += array[index];// somando indice por indice
   }
   return Math.round(count / array.length);// round Se a parte fracionária do número for maior ou igual a  0.5, o argumento x é arredondado para o próximo número inteiro acima, entretanto se a parte fracionária do número for menor que 0.5, então o valor de x é arredondado para o próximo número inteiro abaixo.
   };
