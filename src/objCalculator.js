@@ -19,6 +19,11 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add:(num1, num2)=> (num1 + num2), // está entre chaves para ser objeto, chave vai ser as opreações usa : para mostrar que é a chave //
+  mult:(num1, num2)=> (num1 * num2),
+  div:(num1,num2)=> Math.floor(num1 / num2),// como pede para arredondar a divisao para baixo , usa math floor
+  sub:(num1, num2)=> (num1 - num2),
+};
 
 module.exports = calculator;
