@@ -61,10 +61,9 @@ function createMenu(menuRestaurante) {
   const arrayVazio = [];
   return {
     fetchMenu: () => menuRestaurante,
-    consumption: arrayVazio
+    consumption: arrayVazio,
   };
 }
-
 
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
