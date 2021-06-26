@@ -38,6 +38,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(parseFloat((circle(3).area).toFixed(2)), 28.26)
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    // fui informado que eu deveria utilizar o deepStrictEqual nesse caso. busquei fonte sobre o uso e encontri no w3schools que o deepStrictEqual é utilizado para comparar um objeto e os objetos filhos desse objeto. fonte : https://www.w3schools.com/nodejs/met_assert_deepstrictequal.asp
     assert.deepStrictEqual(circle(3), {radius: 3, area: 28.259999999999998, circumference: 18.84})
   });
 });
