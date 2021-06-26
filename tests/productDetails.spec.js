@@ -44,7 +44,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois productIds terminam com 123.
     const prod1 = ret[0].details.productId.endsWith(123);
     const prod2 = ret[1].details.productId.endsWith(123);
-    const end = prod1 === prod2;
+    const end = ((prod1 === true) && (prod2 === true)) ? true : false;
     assert.strictEqual(end, true);
   });
 });
