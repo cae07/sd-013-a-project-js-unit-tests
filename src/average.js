@@ -18,10 +18,8 @@ const average = (array) => {
     array.length === 0
     || array.some((element) => typeof element !== 'number')
   ) return undefined;
-  function increment(a, i) {
-    a += i;
-  }
-  array.forEach((element) => increment(sum, element));
+
+  array.forEach(function (element) { sum += element; });
   const avg = sum / array.length;
   return Math.round(avg);
 };
