@@ -43,6 +43,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois objetos são diferentes entre si.
     assert.notStrictEqual(productDetails()[0], productDetails()[1]);
     // Teste que os dois productIds terminam com 123.
+    // Feito com ajuda do Josue Lobo.
     assert.strictEqual(productDetails('valu', 'valo')[0].details.productId.substring(4, 7), '123');
     // assert.strictEqual(productDetails('pro1', 'pro2')[0].details.productId.substring(4, 7), '123'); 
   });
