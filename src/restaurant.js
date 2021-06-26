@@ -79,14 +79,35 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
+// Esta função precisa necessariamente não ser uma arrow function pois o uso do this é diferente nas duas declarações.
+
 function insertOrder(content) {
   this.consumption.push(content);
 }
 
+// Ideias retiradas dos seguintes links:
+// https://pt.stackoverflow.com/questions/439632/this-dentro-de-propriedades-de-objetos?rq=1
+// https://pt.stackoverflow.com/questions/491112/aplicar-propriedades-iguais-para-diferentes-objetos-em-js
+// https://pt.stackoverflow.com/questions/182804/adicionar-objeto-dentro-de-um-objeto
+
+let sum = 0;
 const createMenu = (myMenu) => ({ 
   fetchMenu: () => myMenu, 
   consumption: [],
   order: insertOrder,
+  pay: function checkout() {
+    this.consumption.forEach((item) => {
+      if (myMenu.food[item]) {
+        sum += myMenu.food[item];
+      }
+    });
+    this.consumption.forEach((item) => {
+      if (myMenu.drink[item]) {
+        sum += myMenu.drink[item];
+      }
+    });
+    return sum * 1.1; // Para aumentar 10% do total
+  },
 });
 
 module.exports = createMenu;
