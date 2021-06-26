@@ -22,12 +22,8 @@ const average = (param) => {
     if (typeof param[i] !== 'number') {
       return undefined;
     }
-
   }
   return Math.round(med);
-
-  // Adicione sua implementação aqui
-
 };
 
 module.exports = average;
