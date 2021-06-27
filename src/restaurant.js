@@ -79,6 +79,15 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = () => {
+  const menu = { fetchMenu: () => {} };
+  return menu;
+};
 
 module.exports = createMenu;
+
+// eslint-disable-next-line no-unused-expressions
+// eslint-disable-next-line sonarjs/no-use-of-empty-return-value
+// eslint-disable-next-line no-undef
+
+console.log(createMenu()).includes('{ fetchMenu: [Function:');
