@@ -96,7 +96,9 @@ const createMenu = (menu) => {
         total += values[product] || 0;
       });
 
-      return total;
+      const tip = (total * 10) / 100;
+
+      return total + tip;
     },
   };
 

@@ -126,7 +126,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     test8Menu.order('sopa');
     test8Menu.order('agua');
     test8Menu.order('cerveja');
-    assert.strictEqual(test8Menu.pay(), 24.60)
+    assert.strictEqual(parseFloat(test8Menu.pay().toPrecision(4)), 27.06)
     // ```
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
