@@ -129,6 +129,6 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
     menu.pay();
-    assert.strictEqual(menu.pay(), 8);
+    assert.strictEqual(menu.pay(), 8.8);
   });
 });
