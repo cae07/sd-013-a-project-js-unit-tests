@@ -94,7 +94,7 @@ const createMenu = (objetoPassadoPorParametro) => {
         price += objetoPassadoPorParametro.drink[i];
       }
     });
-    return parseFloat(((price)*1.10).toPrecision(4));
+    return parseFloat(((price) * 1.10).toPrecision(4));
   };
 
   addAoConsumption.fetchMenu();
