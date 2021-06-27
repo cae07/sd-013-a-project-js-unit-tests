@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { log } = require('console');
 const productDetails = require('../src/productDetails');
 
 /*
@@ -31,18 +32,33 @@ const productDetails = require('../src/productDetails');
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // ESCREVA SEUS TESTES ABAIXO:
+
     // Teste que o retorno da função é um array.
-    assert.strictEqual(Array.isArray(product), true); // o método Array.isArray() será criado, caso o browser não o disponibilize nativamente
+    const result1 = productDetails('Alcool gel', 'Máscara');
+    const expectedResult1 = true;
+    assert.strictEqual(Array.isArray(result1), expectedResult1); // o método Array.isArray() será criado, caso o browser não o disponibilize nativamente
 
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(product.length, 2);
+    const result2 = productDetails('Alcool gel', 'Máscara');
+    const expectedResult2 = 2;
+    assert.strictEqual(result2.length, expectedResult2);
 
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.strictEqual(product[0], 'object');
+    const result3 = productDetails('Alcool gel', 'Máscara');
+    const expectedResult3 = 'object';
+    assert.strictEqual(typeof(result3[0]), expectedResult3);
+    assert.strictEqual(typeof(result3[1]), expectedResult3);
 
     // Teste que os dois objetos são diferentes entre si.
-    assert.notStrictEqual(product[0], product[1]); // notStrictEqual === diferente (!==)
+    const result4 = productDetails('Alcool gel', 'Máscara');
+    const obj0 = result4[0];
+    const obj1 = result4[1];
+    assert.notDeepStrictEqual(obj0, obj1); 
 
     // Teste que os dois productIds terminam com 123.
+    const result = productDetails('Alcool gel', 'Máscara');
+    const prod0 = result[0].details.productId.endsWith('123');
+    const prod1 = result[1].details.productId.endsWith('123');
+    assert.strictEqual(prod0, prod1);
   });
 });
