@@ -20,11 +20,11 @@
 */
 
 const calculator = {
-  add: (a,b) => Math.floor(a+b),
-  mult: (a,b) => Math.floor(a*b),
-  div: (a,b) => Math.floor(a/b),
-  sub: (a,b) => Math.floor(a-b),
+  add: (a, b) => Math.floor(a + b),
+  mult: (a, b) => Math.floor(a * b),
+  div: (a, b) => Math.floor(a / b),
+  sub: (a, b) => Math.floor(a - b),
 };
-calculator.add(1,3)
+calculator.add(1, 3);
 
 module.exports = calculator;
