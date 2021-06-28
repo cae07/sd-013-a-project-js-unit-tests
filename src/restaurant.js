@@ -49,17 +49,27 @@
 //
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
-const assert = require('assert');
-
-const orderFromMenu = function (request) {
-  this.consumption.push(request);
-};
+function orderFromMenu(string) {
+  this.consumption.push(string);
+}
 
 const createMenu = (menu) => {
-  const restaurant = {
+    const restaurant = {
     fetchMenu: () => menu,
     consumption: [],
     order: orderFromMenu,
+    pay: () => {
+      let totalPay = 0;
+      restaurant.consumption.forEach((pedidos) => {
+        if (menu.food[pedidos]) {
+          totalPay += menu.food[pedidos];
+        } 
+        if (menu.drink[pedidos]) {
+          totalPay += menu.drink[pedidos];
+        }
+      });
+      return totalPay * 1.1;
+    },
   };
   return restaurant;
 };
