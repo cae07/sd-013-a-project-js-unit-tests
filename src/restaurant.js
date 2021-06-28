@@ -90,14 +90,14 @@ const createMenu = (menu) => {
     pay: () => {
       let soma = 0;
       arrayVazio.forEach((item) => {
-        if(menu.food[item]) {
-          soma += menu.food[item]
+        if (menu.food[item]) {
+          soma += menu.food[item];
         } else if (menu.drink[item]) {
-          soma += menu.drink[item]
+          soma += menu.drink[item];
         }
-      })
+      });
         return parseFloat(soma * 1.1).toFixed(2);
-    }
-  }
-}
+    },
+  };
+};
 module.exports = createMenu;
