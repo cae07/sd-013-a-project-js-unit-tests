@@ -20,4 +20,4 @@ const numbers = (myArray) => {
 
 module.exports = numbers;
 
-assert.strictEqual
+assert.strictEqual;
