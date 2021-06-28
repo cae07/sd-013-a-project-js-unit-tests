@@ -38,9 +38,4 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-// console.log(typeof(Array.isArray(productDetails())));
-const assert = require('assert');
-assert.deepStrictEqual(((productDetails())[0].details.productId).endsWith('123') && ((productDetails())[1].details.productId).endsWith('123'), true) 
-
-
 module.exports = productDetails;
