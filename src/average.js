@@ -13,20 +13,18 @@
 */
 
 const average = (variableArray) => {
-  const array = variableArray;
-  let total = 0;
-  const invalidInput = undefined;
-  if (array.length > 0) {
-    array.forEach((element) => {
-      if (typeof (element) !== 'number') {
-        return invalidInput;
-      }
-      total += element;
-    });
-  } else {
-    return invalidInput;
+  if (variableArray.length <= 0) {
+    return undefined;
   }
-  const avg = Math.round(total / array.length);
+  let total = 0;
+  for (let index = 0; index < variableArray.length; index += 1) {
+    if (typeof variableArray[index] !== 'number') {
+      return undefined;
+    }
+    total += variableArray[index];
+  }
+  const avg = Math.round(total / variableArray.length);
   return avg;
 };
+
 module.exports = average;
