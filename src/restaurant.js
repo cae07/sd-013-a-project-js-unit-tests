@@ -64,7 +64,7 @@
 // - Definir o objeto que a `createMenu()` retorna, mas separadamente 
 // - E, depois, definir a função que será atribuída a `order`.
 // ```
-// const restaurant = {}
+let restaurant = {};
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 //
@@ -78,7 +78,33 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+const orderFromMenu = (request) => {
+  restaurant.consumption.push(request);
+  return restaurant;
+};
 
-const createMenu = () => {};
+const createMenu = (novoMenu) => {
+  restaurant = {
+    fetchMenu: () => novoMenu,
+    consumption: [],
+    order: (request) => orderFromMenu(request),
+    pay: () => {
+      let valor = 0;
+      restaurant.consumption.forEach((item) => {
+        const itemFood = Object.keys(restaurant.fetchMenu().food).includes(item);
+        const itemDrink = Object.keys(restaurant.fetchMenu().drink).includes(item);
+        const indexFood = Object.keys(restaurant.fetchMenu().food).indexOf(item);
+        const indexDrink = Object.keys(restaurant.fetchMenu().drink).indexOf(item);
+        if (itemFood) {
+          valor += Object.values(restaurant.fetchMenu().food)[indexFood];
+        } else if (itemDrink) {
+          valor += Object.values(restaurant.fetchMenu().drink)[indexDrink];
+        }
+      });
+      return parseFloat((valor * 1.1).toFixed(2));
+    },
+  };
+  return restaurant;
+};
 
 module.exports = createMenu;
