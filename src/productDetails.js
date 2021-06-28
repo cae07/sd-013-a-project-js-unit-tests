@@ -43,3 +43,5 @@ module.exports = productDetails;
 
 // console.log(productDetails('Cerveja', 'Churrasco')[0])
 // console.log(productDetails('Cerveja', 'Churrasco')[1])
+
+// console.log(Object.keys(productDetails('Cerveja', 'Churrasco')[0], productDetails('Cerveja' ,'Churrasco')[1]))
