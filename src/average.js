@@ -12,37 +12,32 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-function sumCalc(array) {
+const average = (array) => {
+  let avg = 0;
   let sumAll = 0;
   if (array.length === 0) {
     sumAll = undefined;
   } else {
-    for (let i = 0; i < array.length; i += 1) { 
-       if (sumAll !== undefined) {
-         if (typeof array[i] === 'number') {
-           sumAll += array[i];
-         } else {
+   for (let i = 0; i < array.length; i += 1) { 
+      if (sumAll !== undefined) {
+        if (typeof array[i] === 'number') {
+          sumAll += array[i];
+        } else {
           sumAll = undefined;
-         }
-       }
-      } 
-      return sumAll;
-}
-
-const average = (array2) => {
-  let avg = 0;
-  sumCalc(array2);
-    if (sumAll !== undefined) {
-      avg = Math.round(sumAll / array.length);
-    } else {
-      avg = undefined;
-    }
-  };
-  return avg;
+        }
+      }
+     } 
   }
+  if (sumAll !== undefined) {
+    avg = Math.round(sumAll / array.length);
+  } else {
+    avg = undefined;
+  }
+  return avg;
+  };
 
-/* let test = [1, 2, 3, '4', 5]
-console.log(typeof test[3] === "number")
-console.log(average(test)); */
+ let test = [];
+console.log(test.length === 0);
+console.log(average(test));
 
 module.exports = average;
