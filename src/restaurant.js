@@ -94,12 +94,12 @@ const createMenu = (objeto) => ({
         price += objeto.food[item];
       }
     });
-    this.consumption.forEach((item) => { //vai ocorrer o mesmo aqui igual ao de cima
+    this.consumption.forEach((item) => { // vai ocorrer o mesmo aqui igual ao de cima
       if (objeto.drink[item]) {
         price += objeto.drink[item];
       }
     });
     return price * 1.1;
-  }
+   },
 });
 module.exports = createMenu;
