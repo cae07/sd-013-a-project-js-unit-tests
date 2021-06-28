@@ -22,7 +22,7 @@
 const calculator = {
   add: (obj1, obj2) => (obj1 + obj2),
   mult: (obj1, obj2) => (obj1 * obj2),
-  div: (obj1, obj2) => Math.trunc(obj1 / obj2), /*O método Math.trunc() retorna a parte inteira de um número, descartando suas casas decimais.*/
+  div: (obj1, obj2) => Math.trunc(obj1 / obj2), // O método Math.trunc() retorna a parte inteira de um número, descartando suas casas decimais.
   sub: (obj1, obj2) => (obj1 - obj2),
 };
 
