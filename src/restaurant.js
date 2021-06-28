@@ -31,7 +31,7 @@
 
   const meuRestaurante = createMenu({
     food: {'coxinha': 3.90, 'sanduiche', 9.90},
-    drinks: {'agua': 3.90, 'cerveja': 6.90}
+    drink: {'agua': 3.90, 'cerveja': 6.90}
   });
 
   meuRestaurante.fetchMenu() // Retorno: Menu acima
@@ -79,7 +79,7 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-function menuArray(string){
+function menuArray(string) {
   this.consumption.push(string);
 }
 
@@ -89,18 +89,17 @@ const createMenu = (objeto) => ({
   order: menuArray,
   pay: function payment() {
     let price = 0;
-    this.consumption.forEach((item) => {
+    this.consumption.forEach((item) => { // uso o this para pegar o objeto consumption e usar ele para guardar em array onde  faço o uso do forEach para percorrer a chave e valor do objeto que foi dado, usando o if pegando assim o valor objeto.food e guardando no array de consumption, depois ira novamente fazer o loop para executar o comando do if, assim passando na variavel price e jogar os novos dados para essa variavel, entrando novamente no objeto food para procurar o price assim somando na variavel price!
       if (objeto.food[item]) {
         price += objeto.food[item];
       }
     });
-    this.consumption.forEach((item) => {
+    this.consumption.forEach((item) => { //vai ocorrer o mesmo aqui igual ao de cima
       if (objeto.drink[item]) {
         price += objeto.drink[item];
       }
     });
     return price * 1.1;
   }
-})
-
+});
 module.exports = createMenu;
