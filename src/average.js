@@ -12,14 +12,15 @@
     - average([1, '2']) // Retorno: undefined;
 */
 function sumAllCalc(array2) {
-  let sumAll = 0;
+  let sumAll2 = 0;
   for (let i = 0; i < array2.length; i += 1) { 
-      if (typeof array2[i] === 'number') {
-        sumAll += array2[i];
+      if (typeof array2[i] === 'number' && sumAll2 !== undefined) {
+        sumAll2 += array2[i];
       } else {
-        sumAll = undefined;
+        sumAll2 = undefined;
       }
    } 
+   return sumAll2;
 }
 
 const average = (array) => {
@@ -28,7 +29,7 @@ const average = (array) => {
   if (array.length === 0) {
     sumAll = undefined;
   } else {
-    sumAllCalc(array);
+    sumAll = sumAllCalc(array);
   }
   if (sumAll !== undefined) {
     avg = Math.round(sumAll / array.length);
@@ -38,8 +39,9 @@ const average = (array) => {
   return avg;
   };
 
-/*  let test = [];
-console.log(test.length === 0);
-console.log(average(test)); */
+let test = [1, 2, 3, '4', 5];
+console.log(typeof test[3] === 'number');
+console.log(sumAllCalc(test));
+console.log(average(test));
 
 module.exports = average;
