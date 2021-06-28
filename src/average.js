@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (variableArray) => { /// Xereca menor
+const average = (variableArray) => {
   const array = variableArray;
   let total = 0;
   const invalidInput = undefined;
