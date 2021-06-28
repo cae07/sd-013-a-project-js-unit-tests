@@ -19,9 +19,9 @@ const createStudent = (name) => {
   const feedback = () => {
     const feedBac = 'Eita pessoa boa!';
     return feedBac;
-  }
+  };
   const nomeObjeto = {
-    name, feedback
+    name, feedback,
   };
   return nomeObjeto;
 };
