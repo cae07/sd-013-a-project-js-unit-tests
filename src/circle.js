@@ -21,6 +21,7 @@
 const circle = (radius) => {
   const PI = 3.14;
   if (!radius) { return undefined; }
+  console.log(Math.trunc(PI * radius * radius));
   return {
     radius,
     area: PI * radius * radius,
