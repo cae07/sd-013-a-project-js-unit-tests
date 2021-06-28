@@ -51,16 +51,21 @@
 
 const assert = require('assert');
 
-const createMenu = (objeto) => (
-  {
-    fetchMenu: () => objeto,
+const orderFromMenu = function (request) {
+  this.consumption.push(request);
+};
+
+const createMenu = (menu) => {
+  const restaurant = {
+    fetchMenu: () => menu,
     consumption: [],
-  }
-);
+    order: orderFromMenu,
+  };
+  return restaurant;
+};
 
-console.log(createMenu({ food: {}, drink: {} }).fetchMenu());
-
-
+console.log(createMenu({ food: {}, drink: {} }).order('coxinha'));
+console.log(Object.values(createMenu));
 
 const objetoRetornado = createMenu({ food: {}, drink: {} });
 
@@ -68,6 +73,9 @@ assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), [ 'food', 'drin
 assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {} });
 assert.strictEqual(typeof createMenu().fetchMenu, 'function');
 assert.deepStrictEqual(objetoRetornado.consumption, []);
+
+objetoRetornado.order('coxinha')
+assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
 
 
 //------------------------------------------------------------------------------------------
@@ -93,6 +101,8 @@ assert.deepStrictEqual(objetoRetornado.consumption, []);
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
+
+
 
 //------------------------------------------------------------------------------------------
 
