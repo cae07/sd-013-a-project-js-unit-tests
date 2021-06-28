@@ -19,6 +19,7 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
+// Requisito 7
 const calculator = {
   add: (n1, n2) => Math.floor(n1 + n2),
   mult: (n1, n2) => Math.floor(n1 * n2),
