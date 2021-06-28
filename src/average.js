@@ -17,7 +17,7 @@ const average = (param) => {
   if (param !== 'number' || param > 1) {
     return undefined;
   } else {
-    
+     n
   }
   return numbers;
 };

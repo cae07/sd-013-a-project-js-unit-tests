@@ -34,7 +34,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.strictEqual(parseFloat((circle(3).area).toPrecision(4)), 28.26);
     assert.deepStrictEqual(circle(3), {radius: 3, area: 3.14 * 3 * 3 , circumference: 18.84});
 
-
     // Teste se circle retorna um objeto.
     // Teste se o objeto retornado tem 3 entradas.
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
