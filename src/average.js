@@ -18,7 +18,8 @@ const average = (myNumber) => {
   for (let i = 0; i < myNumber.length; i += 1) {
     if (typeof (myNumber[i]) !== 'number') {
     return undefined;
-  }}
+    }; 
+  };
   let result = 0;
   let cont = 0;
   for (let j = 0; j < myNumber.length; j += 1) {
