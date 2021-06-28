@@ -14,8 +14,10 @@
 
 const average = (param) => {
   let numbers = Math.random(param);
-  if (param != "number" || param === '') {
+  if (param !== 'number' || param > 1) {
     return undefined;
+  } else {
+    
   }
   return numbers;
 };
