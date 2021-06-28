@@ -24,7 +24,7 @@ describe('1 - Implemente a função `average`', () => {
     assert.strictEqual(average([1, 2, 3, '4', 5]), undefined);
     assert.strictEqual(average([0, 0, 0, 0, 0, 0, 0]), 0);
     assert.strictEqual(average([1, 2, '3']), undefined);
-    assert.strictEqual(average([1, 2, 3]), 2);
+    assert.strictEqual(average([1, 2, 3]), 2); 
     assert.strictEqual(average([0, 0, 0, 0, 0, 0, 1]), 0);
 
     assert.strictEqual(average([]), undefined);

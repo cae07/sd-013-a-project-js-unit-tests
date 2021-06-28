@@ -34,16 +34,18 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // ESCREVA SEUS TESTES ABAIXO:
     
     // Teste que o retorno da função é um array.
-    assert.strictEqual(Array.isArray(productDetails('teste1','teste2')), true)
+    assert.strictEqual(Array.isArray(productDetails('Cerveja','Churrasco')), true)
     
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(productDetails('teste1', 'teste2').length, 2)
+    assert.strictEqual(productDetails('Cerveja', 'Churrasco').length, 2)
     
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.strictEqual(typeof productDetails('teste1', 'teste2')[0], 'object')
-    assert.strictEqual(typeof productDetails('teste1', 'teste2')[1], 'object')
+    assert.strictEqual(typeof productDetails('Cerveja', 'Churrasco')[0], 'object')
+    assert.strictEqual(typeof productDetails('Cerveja', 'Churrasco')[1], 'object')
     // Teste que os dois objetos são diferentes entre si.
-    assert.notDeepStrictEqual(productDetails('teste1'))
+    assert.notDeepStrictEqual(Object.keys(productDetails('Cerveja', 'Churrasco')[0], productDetails('Cerveja' ,'Churrasco')[1].keys),true);
     // Teste que os dois productIds terminam com 123.
+    assert.deepStrictEqual(productDetails('Cerveja', 'Churrasco')[0].details.productId.endsWith('123'), true);
+    assert.deepStrictEqual(productDetails('Cerveja', 'Churrasco')[1].details.productId.endsWith('123'), true);
   });
 });
