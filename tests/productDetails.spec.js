@@ -37,6 +37,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
     // Teste que os dois productIds terminam com 123.
-    assert.deepStrictEqual(productDetails(), typeof('string'));
+    assert.strictEqual(typeof (productDetails('Alcool gel', 'Máscara')), 'array');
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
+    assert.strictEqual(typeof (productDetails('Alcool gel', 'Máscara')), 'object');
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara').productId, '123');
   });
 });
