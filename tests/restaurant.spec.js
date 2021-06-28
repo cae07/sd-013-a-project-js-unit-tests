@@ -170,7 +170,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
 
     //objeto4Retornado.pay() // Retorno: somaDosPreçosDosPedidos
 
-    assert.strictEqual(objeto5Retornado.pay(), 9.90);
+    assert.strictEqual(objeto5Retornado.pay(), parseFloat(9.90).toFixed(2));
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });

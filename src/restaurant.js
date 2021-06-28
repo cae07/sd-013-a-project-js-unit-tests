@@ -99,7 +99,7 @@ const createMenu = (menu) => {
         }
       })
 
-      return soma * 1.1;
+      return parseFloat(soma * 1.1).toFixed(2);
     }
   }
 }
