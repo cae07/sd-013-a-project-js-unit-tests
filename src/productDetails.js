@@ -41,4 +41,3 @@ const productDetails = (firstProduct, secondProduct) => [
 const funcao = productDetails('test', 'testD');
 console.log(Array.isArray(funcao));
 module.exports = productDetails;
-
