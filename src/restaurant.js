@@ -46,13 +46,12 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-//
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
-//
+
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -71,6 +70,7 @@
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
+
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -79,27 +79,32 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const consumption = [];
-const createMenu = (obj) => ({
-  fetchMenu: () => obj,
-  consumption,
-  order: (text) => {
-    consumption.push(text);
-  },
-  pay: () => {
-    let soma = 0;
-    consumption.forEach((item) => {
-      if (obj.food[item]) {
-        soma += obj.food[item];
-      }
-    });
+const purchaseSum = (list, objeto) => {
+  let total = 0;
+  list.forEach((purchase) => {
+    if (objeto[purchase]) {
+      total += objeto[purchase];
+    }
+  });
+  return total;
+};
 
-    consumption.forEach((item) => {
-      if (obj.drinks[item]) {
-        soma += obj.drinks[item];
-      }
-    });
-    return soma;
+const restaurant = {
+  consumption: [],
+  order: (request) => {
+    restaurant.consumption.push(request);
+  },
+};
+
+const createMenu = (objeto) => ({
+  fetchMenu: () => objeto,
+  ...restaurant,
+  pay: () => {
+    const food = purchaseSum(restaurant.consumption, objeto.food);
+    const drinks = purchaseSum(restaurant.consumption, objeto.drinks);
+    let total = food + drinks;
+    total += (total * 0.10);
+    return total;
   },
 });
 
