@@ -31,7 +31,7 @@ const createMenu = require('../src/restaurant');
   const meuRestaurante = createMenu({
     food: {'coxinha': 3.90, 'sanduiche', 9.90},
     drinks: {'agua': 3.90, 'cerveja': 6.90}
-  });
+  });a
 
   meuRestaurante.fetchMenu() // Retorno: Menu acima
 
