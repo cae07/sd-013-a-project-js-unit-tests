@@ -1,5 +1,3 @@
-"use strict";
-
 /* eslint-disable no-unused-vars */
 
 /*
@@ -26,7 +24,9 @@ var vqv = function vqv(nome, idade) {
     return undefined;
   }
 
-  return "Oi, meu nome \xE9 ".concat(nome, "!\nTenho ").concat(idade, " anos,\ntrabalho na Trybe e mando muito em programa\xE7\xE3o!\n#VQV!");
+  return 'Oi, meu nome \xE9 '
+  .concat(nome, '!\nTenho ')
+  .concat(idade, ' anos,\ntrabalho na Trybe e mando muito em programa\xE7\xE3o!\n#VQV!');
 };
 
 module.exports = vqv;
