@@ -24,8 +24,8 @@ const calculator = {
   add: (int1, int2) => (int1 + int2),
   mult: (int1, int2) => (int1 * int2),
   div: (int1, int2) => Math.floor(int1 / int2),
-  //A função Math.floor(x) retorna o menor número inteiro dentre o número "x".
-  //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+  // A função Math.floor(x) retorna o menor número inteiro dentre o número "x".
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
   sub: (int1, int2) => (int1 - int2),
 };
 
