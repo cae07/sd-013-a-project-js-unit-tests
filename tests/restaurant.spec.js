@@ -45,7 +45,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     objetoRetornado.order("agua")
     objetoRetornado.order("sopa")
     objetoRetornado.order("sashimi")
-    assert.deepStrictEqual(createMenu().consumption, ["coxinha", "agua", "sopa", "sashimi"])
+    assert.deepStrictEqual(objetoRetornado.consumption, [ "agua", "sopa", "sashimi"])
 
   });
 
