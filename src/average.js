@@ -20,7 +20,7 @@ const average = (valores) => {
 
   for (let i = 0; i < valores.length; i += 1) {
     const valor = valores[i];
-    if (typeof(valor) !== 'number') {
+    if (typeof (valor) !== 'number') {
       return undefined;
     }
     total += valor;
