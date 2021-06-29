@@ -79,7 +79,7 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-// Ajuda Rafael Gumieri que explicou o código de manhã para o grupo,depois explicação da Julia
+// Ajuda Rafael Gumieri que explicou o código de manhã para o grupo, como eu não estava presente,depois Julia me explicou de tarde
 const createOrder = (item, array) => {
   array.push(item);// aqui o array recebe o consumo de parametro e dentro dele coloca o item.
 };
