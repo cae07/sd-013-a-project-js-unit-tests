@@ -1,5 +1,3 @@
-"use strict";
-
 /* eslint-disable no-var */
 
 /* eslint-disable block-scoped-var */

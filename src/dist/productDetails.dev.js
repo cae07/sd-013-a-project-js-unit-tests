@@ -1,5 +1,3 @@
-"use strict";
-
 /*
   Dadas duas strings que representam nomes de produtos,
   retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
@@ -29,13 +27,13 @@ var productDetails = function productDetails(firstProduct, secondProduct) {
   return [{
     name: firstProduct,
     details: {
-      productId: "".concat(firstProduct, "123")
-    }
+      productId: ''.concat(firstProduct, '123'),
+    },
   }, {
     name: secondProduct,
     details: {
-      productId: "".concat(secondProduct, "123")
-    }
+      productId: ''.concat(secondProduct, '123'),
+    },
   }];
 };
 

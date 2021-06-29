@@ -1,5 +1,3 @@
-"use strict";
-
 /*
   Desenvolva um objeto calculator que possui quatro chaves:
     - add;
