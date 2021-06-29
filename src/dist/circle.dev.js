@@ -25,9 +25,9 @@ var circle = function circle(radius) {
   }
 
   return {
-    radius: radius,
+    radius,
     area: PI * radius * radius,
-    circumference: 2 * PI * radius
+    circumference: 2 * PI * radius,
   };
 };
 

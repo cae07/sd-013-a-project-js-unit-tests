@@ -1,5 +1,3 @@
-"use strict";
-
 /*
   Dada uma função chamada createStudent que recebe como parâmetro um nome,
   retorne um objeto que contenha duas chaves:
@@ -18,10 +16,10 @@
 */
 var createStudent = function createStudent(nome) {
   var estudante = {
-    name: "".concat(nome),
+    name: ''.concat(nome),
     feedback: function feedback() {
       return 'Eita pessoa boa!';
-    }
+    },
   };
   return estudante;
 };
