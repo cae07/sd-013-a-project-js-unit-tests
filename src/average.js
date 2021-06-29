@@ -12,8 +12,18 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  
+const average = (array) => {
+  if (array.length < 1) return undefined;
+  let soma = 0;
+
+  for (let i in array) {
+    if (typeof array[i] !== 'number') return undefined;
+    soma += array[i];
+    // O operador typeof retorna uma string indicando o tipo de um operando.
+  }
+
+  return Math.round(soma / array.length);
+  // A função Math.round() retorna o valor de um número arredondado para o inteiro mais proximo.
 };
 
 module.exports = average;
