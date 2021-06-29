@@ -31,23 +31,21 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.strictEqual(array.isarray(productDetails('um' ,'dois')),true);
-    assert.strictEqual(productDetails('umaCoisa', 'OutraCoisa').length, 2);
-    assert.strictEqual(productDetails('umaCoisa', 'outraCoisa'),Object.entries(productDetails().key))
-    assert.notStrictEqual(products[0], products[1]);
     
-    //Teste que os dois productIds terminam com 123.
-    const product0 = product[0].details.productId;
-    const product1 = product[1].details.productId;
-
-    assert.strictEqual(product0.substr(product0.length - 3), '123');
-    assert.strictEqual(product1.substr(product1.length - 3), '123');
-   
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // Teste que os dois productIds terminam com 123.
-  });
+     // ESCREVA SEUS TESTES ABAIXO:
+     //Teste que o retorno da função é um array.
+     assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara'),'object');
+     //Teste que o array retornado pela função contém dois itens dentro.
+     assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
+     // Teste que os dois itens dentro do array retornado pela função são objetos.
+     assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara'),'object');
+     // Teste que os dois objetos são diferentes entre si.
+     assert.notDeepStrictEqual(productDetails('Alcool gel', 'Máscara'), true);
+     // Teste que os dois productIds terminam com 123.
+     const products = productDetails('Alcool gel', 'Máscara');
+     const ids1 = products[0].details.productId;
+     const ids2 = products[1].details.productId;
+     assert.deepStrictEqual(ids1.endsWith('123'), ids2.endsWith('123'));
+    });
 });
+
