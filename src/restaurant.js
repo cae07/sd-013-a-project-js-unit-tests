@@ -87,20 +87,21 @@ const order = (item) => {
   restaurant.consumption.push(item);
 };
 
-const closeAcc = (elem) => {
-  console.log(restaurant.fetchMenu());
-  console.log(elem);
-  let v = Object.values(restaurant.fetchMenu());
-  
-  // myArray.filter(x => x.id === '45').map(x => x.foo);
-  // console.log('valor',v.find(elem));
+const closeAcc = () => {
+  let tabelaPreco = Object.values(restaurant.fetchMenu());
+  let conta = restaurant.consumption;
+  let valorFinal = 0;
+  conta.forEach((item) => { 
+    valorFinal += tabelaPreco.find((obj) => obj[item])[item];
+  });
+  return valorFinal;
 };
 
 let createMenu = (menu) => { 
   restaurant.fetchMenu = () => menu;
   restaurant.consumption = [];
   restaurant.order = (item) => order(item);
-  restaurant.pay = () => restaurant.consumption.forEach(closeAcc);
+  restaurant.pay = () => closeAcc();
   return restaurant;
 };
 

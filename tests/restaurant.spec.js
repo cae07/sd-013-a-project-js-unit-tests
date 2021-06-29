@@ -116,7 +116,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
     obj.order('coxinha');
-    count +=1;
+    count += 1;
     assert.strictEqual(count,obj.consumption.length);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -127,8 +127,8 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
      objetoRetornado.order('coxinha');
      objetoRetornado.order('agua');
      objetoRetornado.order('coxinha');
-     objetoRetornado.pay(); // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    assert.strictEqual(objetoRetornado.pay(),11.7);
   });
 });
