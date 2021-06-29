@@ -24,9 +24,7 @@ const calculator = {
 const addc = (num1, num2) => (num1 + num2);
 const multp = (num1, num2) => (num1 * num2);
 const subt = (num1, num2) => (num1 - num2);
-const divis = (num1, num2) => {
-  return Math.floor(num1 / num2);
-};
+const divis = (num1, num2) => Math.floor(num1 / num2);
 calculator.add = addc;
 calculator.mult = multp;
 calculator.div = divis;
