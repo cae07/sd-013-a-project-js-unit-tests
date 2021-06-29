@@ -28,3 +28,4 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
     assert.strictEqual(numbers([' ']), false)
   });
 });
+// Tentando resolver conflito
