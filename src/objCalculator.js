@@ -21,17 +21,21 @@
 
 const calculator = {
   add: (a, b) => {
-    return Math.trunc(a + b);
+    const soma = Math.trunc(a + b);
+    return soma;
   },
   mult: (a, b) => {
-    return Math.trunc(a * b);
+   const multiplica = Math.trunc(a * b);
+   return multiplica;
   },
   div: (a, b) => {
-    return Math.trunc(a / b);
+   const divide = Math.trunc(a / b);
+   return divide;
   },
   sub: (a, b) => {
-    return Math.trunc(a - b);
-  }
+   const subtrai = Math.trunc(a - b);
+   return subtrai;
+  },
 };
 
 module.exports = calculator;
