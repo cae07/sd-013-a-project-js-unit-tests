@@ -13,7 +13,7 @@
 */
 
 const average = (array) => {
-  let soma =0;
+  let soma = 0;
 
   if (array.length === 0) { 
     return undefined;
@@ -23,7 +23,7 @@ const average = (array) => {
     if (typeof (array[index]) !== 'number') {
       return undefined;
     }
-    media += array[index]; 
+    soma += array[index]; 
   }
 
   return Math.round(soma / array.length);
