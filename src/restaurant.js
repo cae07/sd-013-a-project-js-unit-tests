@@ -3,7 +3,9 @@
 const purchaseSum = (list, objeto) => {
   let total = 0;
   list.forEach((purchase) => {
-    (objeto[purchase]) ? total += objeto[purchase] : ''
+    if (objeto[purchase]) {
+      total += objeto[purchase];
+    }
   });
   return total;
 };
