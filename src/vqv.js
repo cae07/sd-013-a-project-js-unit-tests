@@ -16,6 +16,14 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+// Declara uma função que verifica se a função foi chamada sem nenhum parâmetro e, se for o caso, retorna o valor undefined.
+const vqv = (nome, idade) => {
+  if ((nome === undefined) && (idade === undefined)) {
+    return undefined;
+  }
+  // Função que recebe os parâmentos de nome e idade e retorna a frase solicitada pelo exercício, usando o padrão de escrita template literals.
+  return `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\n`
+  + 'trabalho na Trybe e mando muito em programação!\n#VQV!';
+};
 
 module.exports = vqv;
