@@ -18,7 +18,7 @@ const average = (anyArray) => {
     return undefined;
   }
   // Laço for que vasculha o array recebido e, se o tipo do objeto recebido não for numérico, retorna undefined.
-  for (index = 0; index < anyArray.length; index += 1) {
+  for (let index = 0; index < anyArray.length; index += 1) {
     if (typeof anyArray[index] !== 'number') {
       return undefined;
     }
@@ -26,7 +26,7 @@ const average = (anyArray) => {
   // Declara uma variável para poder armazenar a soma dos valores do array.
   let sumTotal = 0;
   // Laço for que vasculha o array recebido e atribui a variável sumTotal a soma dos valores dos objetos do array.
-  for (index = 0; index < anyArray.length; index += 1) {
+  for (let index = 0; index < anyArray.length; index += 1) {
     sumTotal += anyArray[index];
   }
   // Declara uma variável que é igual ao resultado da variável sumTotal (soma dos elementos do array) e divide pelo objeto que estiver passando pelo index no laço for.
