@@ -12,6 +12,8 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-//Ponto para fazer commit
+const average = () => {
+  //comment para fazer PR
+};
+
 module.exports = average;
