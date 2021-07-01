@@ -15,15 +15,13 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-// Verificar possibilidades de refatoração do código para utilizar menos linhas.
-// Declara-se a constante studentInput que retorna, na sequência, o name c/ o calor atribuído a input (nome do estudante), e feedback que, por meio de uma arrowfunction, retorna o valor de input com a string 'Eita pessoa boa!'
+// Verificar possibilidades de refatoração do código para utilizar menos linhas. Ajuda do colega Rodrigo.
+// Declara-se a constante studentInput que retorna, na sequência, o name c/ o calor atribuído a input (nome do estudante), e feedback que, por meio de uma arrow function, retorna o valor de input com a string 'Eita pessoa boa!'
 const createStudent = (input) => {
-  const studentInput = {
+  return {
     name: input,
     feedback: () => 'Eita pessoa boa!',
-  }
-  // Retorna o contúdo de studentInput.
-  return studentInput;
+  };
 };
 
 module.exports = createStudent;
