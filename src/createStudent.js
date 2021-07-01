@@ -19,5 +19,5 @@ const createStudent = (name) => ({
     name,
     feedback: () => 'Eita pessoa boa!',
   });
-
+console.log(createStudent('Dudu'));
 module.exports = createStudent;
