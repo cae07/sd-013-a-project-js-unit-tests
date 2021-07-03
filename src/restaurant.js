@@ -79,6 +79,43 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// Referência para criar funções que retornam valores (https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Return_values) //
+
+const createMenu = (menu) => {
+  const result = {};
+  const object = {
+    fetchMenu: () => {
+      for (const key in menu) {
+        if (key) result[key] = menu[key];
+      }
+      return result;
+    },
+    order: (request) => {
+      object.consumption.push(request);
+    },
+    consumption: [],
+    pay: (equalCheck) => {
+      const object1 = {};
+      const objectEntries = Object.assign(object1, menu.food, menu.drink);
+      const objectOrder = object.consumption;
+      
+      let totalValue = 0;
+      const checkFunction = typeof (equalCheck) === 'function';
+      for (const key in objectEntries) {
+        if (checkFunction) totalValue = equalCheck(key, totalValue, objectEntries, objectOrder);
+      }
+      totalValue *= 1.1;
+      return `R$${totalValue}`;
+    },
+  };
+  return object;
+};
+
+const equalCheck = (key, totalValue, objectEntries, objectOrder) => {
+  for (const iterator of objectOrder) {
+  if (iterator === key) totalValue += objectEntries[key];
+}
+  return totalValue;
+};
 
 module.exports = createMenu;
