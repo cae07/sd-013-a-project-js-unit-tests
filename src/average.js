@@ -11,9 +11,21 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+const assert = require('assert');
 
-const average = () => {
-  aa;
+const average = (number) => {
+  let soma = 0;
+  const div = number.length;
+  if (div === 0) {
+    return undefined;
+  }
+  for (let index = 0; index < number.length; index += 1) {
+    if (typeof number[index] !== 'number') {
+      return undefined;
+    }
+    soma += Math.round(number[index]);    
+  }
+  soma = Math.round(soma / div);
+  return soma;
 };
-
 module.exports = average;

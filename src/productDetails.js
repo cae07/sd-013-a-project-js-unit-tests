@@ -23,7 +23,6 @@
     }
   ]
 */
-
 const productDetails = (firstProduct, secondProduct) => [
   {
     name: firstProduct,
@@ -38,5 +37,4 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
 module.exports = productDetails;
