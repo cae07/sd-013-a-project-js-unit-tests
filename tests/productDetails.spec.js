@@ -32,6 +32,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
+    // Soluções encontradas com o auxílio do amigo Rodrigo Porva, que se propôs a codar junto comigo e me explicar os conceitos por trás das soluções.
     // Teste que o retorno da função é um array.
     assert.strictEqual(Array.isArray(productDetails('firstProduct', "secondProduct")), true);
     // Teste que o array retornado pela função contém dois itens dentro.

@@ -19,6 +19,12 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (numOne, numTwo) => numOne + numTwo,
+  mult: (numOne, numTwo) => numOne * numTwo,
+  // Para que seja possível arredondar os resultados das divisões para baixo, conforme solicita o requisito, utiliza-se o método math.floor. FONTE: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+  div: (numOne, numTwo) => Math.floor(numOne / numTwo),
+  sub: (numOne, numTwo) => numOne - numTwo,
+};
 
 module.exports = calculator;
