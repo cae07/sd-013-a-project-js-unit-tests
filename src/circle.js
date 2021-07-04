@@ -28,9 +28,4 @@ const circle = (radius) => {
   };
 };
 
-let tratamento = (circle(3));
-
-tratamento.area = parseFloat(tratamento.area).toPrecision(2);
-
-console.log(tratamento.radius);
 module.exports = circle;
