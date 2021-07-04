@@ -45,7 +45,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
 
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     let tratamento = (circle(3));    
-    tratamento.area = parseFloat(tratamento.area).toPrecision(2);
+    tratamento.area = parseFloat((tratamento.area).toFixed(2));
     assert.deepStrictEqual(tratamento, {radius: 3, area: 28.26, circumference: 18.84});
   });
 });
