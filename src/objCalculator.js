@@ -28,7 +28,7 @@ const calculator = {
   div: (a, b) => Math.trunc(a / b),
 
   sub: (a, b) => Math.trunc(a - b),
-
+  
 };
 
 module.exports = calculator;
