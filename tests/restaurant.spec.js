@@ -65,7 +65,10 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
+    const testObject3 = {food: 'carne', drink: 'coca'};
+    const objetoRetornado3 = createMenu(testObject3);
+    const verification3 = testObject3 === objetoRetornado3.fetchMenu();
+    assert.ok(verification3);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
