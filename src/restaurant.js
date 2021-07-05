@@ -86,13 +86,16 @@ function addConsumption(request) {
 }
 // trecho realizado com a ajuda do Cassio Pereira
 function valorPay() {
-  let valorConta = 0;
+  /* let valorConta = 0; */
 
   const cardapio = { ...this.fetchMenu().food, ...this.fetchMenu().drink };
-  this.consumption.forEach((item) => { 
+/*   this.consumption.forEach((item) => { 
     valorConta += cardapio[item];   
   });
-  
+ */  
+  const valorConta = this.consumption
+  .reduce((valorAcumulado, valorItemAtual) => valorAcumulado + cardapio[valorItemAtual], 0);
+
   return valorConta * 1.1;
 }
 const createMenu = (obj) => ({
@@ -102,5 +105,5 @@ const createMenu = (obj) => ({
     order: addConsumption,
     pay: valorPay,
   });
-  
+
 module.exports = createMenu;
