@@ -94,7 +94,7 @@ function valorPay() {
   });
  */  
   const valorConta = this.consumption
-  .reduce((valorAcumulado, valorItemAtual) => valorAcumulado + cardapio[valorItemAtual], 0);
+    .reduce((valorAcumulado, valorItemAtual) => valorAcumulado + cardapio[valorItemAtual], 0);
 
   return valorConta * 1.1;
 }
