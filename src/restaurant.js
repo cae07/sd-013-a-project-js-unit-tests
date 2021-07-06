@@ -85,6 +85,19 @@ const createMenu = (myMenu) => {
   restaurant.fetchMenu = () => myMenu;
   restaurant.comsuption = [];
   restaurant.order = orderFromMenu;
+  restaurant.pay = () => {
+    const comsuptions = restaurant.comsuption;
+    const foodAndDrinks = { ...myMenu.food, ...myMenu.drinks };
+    const keys = Object.keys(foodAndDrinks);
+    const values = Object.values(foodAndDrinks);
+    let payment = 0;
+
+    comsuptions.forEach((comsuption) => {
+      keys.forEach((key, index) => { if (comsuption === key) payment += values[index]; });
+    });
+    
+    return payment;
+  };
 
   return restaurant;
 };
