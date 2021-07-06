@@ -41,4 +41,7 @@ const productDetails = (firstProduct, secondProduct) => [
 
 module.exports = productDetails;
 
-console.log(typeof productDetails);
+const test = productDetails('omo', 'rexona');
+const test1 = Object.keys(test);
+console.log(test);
+console.log(test1);
