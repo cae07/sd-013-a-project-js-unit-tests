@@ -84,7 +84,7 @@ const createMenu = ((myMenu) => {
     fetchMenu: () => ({ ...myMenu }),
     consumption: [],
     order: (pedido) => restaurant.consumption.push(pedido),
-    pay: () => {
+    pay: () => { // resolvido com ajuda de matrheus turma 13 A
       let consume = [];
       restaurant.consumption.forEach((item) => {
         if (myMenu.food[item]) {
