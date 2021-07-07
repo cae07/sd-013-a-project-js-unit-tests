@@ -32,7 +32,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
         // Teste que o retorno da função é um array.
         const test = productDetails('omo', 'rexona');
-    assert.strictEqual(typeof (test), 'object')
+    assert.ok(Array.isArray(test))
     // Teste que o array retornado pela função contém dois itens dentro.
     let test1 = Object.keys(test);
     assert.strictEqual(test1.length, 2)

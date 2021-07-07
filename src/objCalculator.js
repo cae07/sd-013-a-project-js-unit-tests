@@ -26,9 +26,4 @@ const calculator = {
   sub: (num1, num2) => Math.floor(num1 - num2),
 };
 
-console.log(calculator.add(2, 2));
-console.log(calculator.mult(2, 2));
-console.log(calculator.div(2, 2));
-console.log(calculator.sub(2, 2));
-
 module.exports = calculator;
