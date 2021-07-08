@@ -85,27 +85,27 @@ const batata = (food) => { // Nome carinhoso, dado pelo colega Gabriel.
   const allItems = {};
   Object.assign(allItems, allFoods, allDrinks);
   return allItems[food];
-}
+};
 
 const picPay = () => {
   let totalAmount = 0;
-  const consumedFood = restaurant.consumption
+  const consumedFood = restaurant.consumption;
   for (const i of consumedFood) {
     totalAmount += batata(i);
   }
   return (totalAmount * 1.1).toFixed(2);
-}
+};
 
 const createMenu = (menu) => {
   restaurant = {
     fetchMenu: () => menu,
     consumption: [],
-    order: (menu) => {
-      restaurant.consumption.push(menu)
+    order: (secondMenu) => {
+      restaurant.consumption.push(secondMenu);
     },
     pay: () => parseFloat(picPay()),
-  }
-  return restaurant
+  };
+  return restaurant;
 };
 
 module.exports = createMenu;
