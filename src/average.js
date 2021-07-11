@@ -30,7 +30,7 @@ const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
-  checkAverage(array);
+  return checkAverage(array);
 };
 
 module.exports = average;
