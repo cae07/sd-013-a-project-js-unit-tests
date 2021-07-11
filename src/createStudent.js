@@ -20,7 +20,7 @@ const feedback = () => 'Eita pessoa boa!';
 const createStudent = (name) => {
   let obj = {
     name,
-    feedback() { return 'Eita pessoa boa!'; },}
+    feedback() { return 'Eita pessoa boa!'; }, };
   return obj;
 };
 

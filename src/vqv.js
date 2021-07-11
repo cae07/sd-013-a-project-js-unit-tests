@@ -17,16 +17,14 @@
 */
 
 const vqv = (nome, idade) => {
-  if (typeof nome === "undefined" || typeof idade === "undefined") {
+  if (typeof nome === 'undefined' || typeof idade === 'undefined') {
     return undefined;
-  } else {
+  }
   const resultado = `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
   return resultado;
-  };
 };
 
 module.exports = vqv;
-console.log(vqv("Tunico", 29));
