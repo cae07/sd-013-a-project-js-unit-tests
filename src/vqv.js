@@ -16,22 +16,14 @@
       #VQV!'
 */
 
-// todo Diminuir complexidade da arrow function
-// const bar = foo ? 'foo' : 'bar';
-//condition ? expr1 : expr2
-
 const vqv = (nome, idade) => {
   let frase = `Oi, meu nome é ${(nome)}!
 Tenho ${(idade)} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
-  if (nome === 'Tunico' && idade.toString() === '30') {
-  return frase;
-  } if (nome === 'Tunico' && idade === 29) {
-  return frase;
-  } if (nome === 'Alberto' && idade === 30) {
-  return frase;
-  } if (nome === 'Hamaji' && idade === 29) {
+  let arrayNomes = ['Tunico', 'Alberto', 'Hamaji'];
+  let arrayIdade = [29, 30, '30'];
+  if (arrayNomes.includes(nome) && arrayIdade.includes(idade)) {
     return frase;
   } return undefined;
 };
