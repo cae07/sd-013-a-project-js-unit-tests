@@ -18,13 +18,13 @@ const average = (numeros) => {
     return undefined;
   }
   for (let numero of numeros) {
-    if(typeof(numero) === 'number') {
+    if (typeof(numero) === 'number') {
       resultado += numero;
     } else {
       return undefined;
     }
   }
-  return Math.round(resultado/numeros.length);
+  return Math.round(resultado / numeros.length);
 };
 
 module.exports = average;
