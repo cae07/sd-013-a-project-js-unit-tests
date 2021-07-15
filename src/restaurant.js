@@ -81,15 +81,25 @@
 
 const restaurant = {
   consumption: [],
+  aPagar: 0,
 };
 
 const orderFromMenu = (request) => {
   restaurant.consumption.push(request);
 };
 
+const formaDePagamento = () => {
+  const foiConsumido = restaurant.fetchMenu();
+  const chave = Object.keys(foiConsumido);
+  for (let index = 0; index < chave.length; index += 1) {
+    
+  }
+};
+
 const createMenu = (myMenu) => {
   restaurant.fetchMenu = () => myMenu;
   restaurant.order = orderFromMenu;
+  restaurant.pay = formaDePagamento;
   return restaurant;
  };
 
