@@ -3,9 +3,9 @@
 
 const assert = require('assert');
 const circle = require('../src/circle');
-const numbers = require('../src/numbers');
+/* const numbers = require('../src/numbers');
 const vqv = require('../src/vqv.js');
-const { isObjectExpression } = require('eslint-plugin-sonarjs/lib/utils/nodes');
+const { isObjectExpression } = require('eslint-plugin-sonarjs/lib/utils/nodes'); */
 
 /*
   Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência).
@@ -39,10 +39,9 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     assert.strictEqual(parseFloat(circle(2).circumference), 12.56);
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    assert.strictEqual(parseFloat(circle(3).area), 28.259999999999998);
+    assert.strictEqual(parseFloat(circle(3).area.toPrecision(4)), 28.26);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    // Teste:
-    const actual = circle(3);s
+    const actual = circle(3);
     const expected = {
       radius: 3,
       area: 28.259999999999998,
