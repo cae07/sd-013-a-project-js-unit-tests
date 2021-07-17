@@ -85,18 +85,18 @@ const createMenu = (obj) => ({
   order: (order) => createMenu.consumption.push(order),
   pay: function payment() {
     createMenu.consumption.forEach((item) => {
-      if (objeto.food[item]) {
-        soma += objeto.food[item];
+      if (obj.food[item]) {
+        soma += obj.food[item];
       }
     });
     createMenu.consumption.forEach((item) => {
-      if (objeto.drink[item]) {
-        soma += objeto.drink[item];
+      if (obj.drink[item]) {
+        soma += obj.drink[item];
       }
     });
     soma *= 1.1;
     return soma;
-  }}
+  } }
 );
 
 module.exports = createMenu;
