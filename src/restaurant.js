@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+ /* eslint-disable max-len */
 
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
@@ -77,26 +77,56 @@
 //   createMenu.consumption.push(item);
 // }
 
-let soma = 0;
+// const createMenu = (obj) => {
+//   const cardapio = { fetchMenu: () => obj,
+//     consumption: [],
+//     order: (string) => cardapio.consumption.push(string),
+//   };
+//   cardapio.pay = () => {
+//     let soma = 0;
+//     cardapio.consumption.forEach((item) => {
+//       if (item in obj.food) {
+//         soma += obj.food[item];
+//       } else if (item in obj.drink) {
+//         soma += obj.drink[item];
+//       }
+//     });
+//     return parseFloat(((soma) * 1.1).toPrecision(4));
+//   };
+// cardapio.fetchMenu();
+// cardapio.pay();
+// return cardapio;
+// };
+// Codigo de Josue Lobo feat. Rogerio P. da Silva
+const createMenu = (menu) => {
+  const menuRestaurante = { fetchMenu: () => menu,
+    consumption: [],
+    order: (string) => menuRestaurante.consumption.push(string),
+  };
 
-const createMenu = (obj) => ({
-  fetchMenu: () => obj,
-  consumption: [],
-  order: (order) => createMenu.consumption.push(order),
-  pay: function payment() {
-    createMenu.consumption.forEach((item) => {
-      if (obj.food[item]) {
-        soma += obj.food[item];
+  menuRestaurante.pay = () => {
+    let price = 0;
+    menuRestaurante.consumption.forEach((element) => {
+      if (element in menu.food) {
+        price += menu.food[element];
+      } else if (element in menu.drink) {
+        price += menu.drink[element];
       }
     });
-    createMenu.consumption.forEach((item) => {
-      if (obj.drink[item]) {
-        soma += obj.drink[item];
-      }
-    });
-    soma *= 1.1;
-    return soma;
-  } }
-);
+    return ((price) * 1.10).toPrecision(4);
+  };
+
+  menuRestaurante.fetchMenu();
+  menuRestaurante.pay();
+  return menuRestaurante;
+};
 
 module.exports = createMenu;
+
+// function order(order) {
+//   return consumption.push(order);
+// };
+// createMenu().order('Coxinha');
+// console.log(createMenu('Coxinha').order);
+// console.log(createMenu().consumption);
+// module.exports = createMenu;
