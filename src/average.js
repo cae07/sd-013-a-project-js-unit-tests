@@ -21,13 +21,12 @@ const average = (array) => {
     return undefined;
   }
   for (index = 0; index < array.length; index += 1) {
-    somaLista = array[index] + somaLista
+    somaLista = array[index] + somaLista;
     if (typeof array[index] !== 'number') {
       return undefined;
     }
   }
 
-  return Math.round(somaLista / array.length)
-
+  return Math.round(somaLista / array.length);
 };
 module.exports = average;
