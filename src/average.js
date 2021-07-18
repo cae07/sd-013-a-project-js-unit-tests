@@ -13,20 +13,19 @@
 */
 
 // Iniciando o Projeto!
-
 const average = (array) => {
-  mediaLista = 0;
-  somaLista = 0;
+  let mediaLista = 0;
+  let somaLista = 0;
+
   if (array === null || array.length === 0) {
     return undefined;
   }
-  for (index = 0; index < array.length; index += 1) {
+  for (let index = 0; index < array.length; index += 1) {
     somaLista = array[index] + somaLista;
     if (typeof array[index] !== 'number') {
       return undefined;
     }
   }
-
   return Math.round(somaLista / array.length);
 };
 module.exports = average;
