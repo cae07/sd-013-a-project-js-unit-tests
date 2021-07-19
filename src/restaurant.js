@@ -86,19 +86,19 @@ const createMenu = (menu) => {
   let consumo = [];
   return {
     fetchMenu: () => menu,
-    consuption: comsuno,
-    order: (item) => createOrder(item,consumo),
+    consumption: consumo,
+    order: (item) => createOrder(item, consumo),
     pay: () => {
-      let soma = 0
+      let soma = 0;
       consumo.forEach((itemByItem) => {
-        if(menu.food[itemByitem]) {
-          soma += menu.food[itemByItem]
+        if (menu.food[itemByItem]) {
+          soma += menu.food[itemByItem];
         } else if (menu.drink[itemByItem]) {
           soma += menu.drink[itemByItem];
         }
       });
-      return parseFloat(soma * 1.1). toFixed(2);
-    }
+      return parseFloat(soma * 1.1).toFixed(2);
+    };
   };
 };
 
