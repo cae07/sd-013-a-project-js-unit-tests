@@ -98,7 +98,7 @@ const createMenu = (menu) => {
         }
       });
       return parseFloat(soma * 1.1).toFixed(2);
-    }
+    },
   };
 };
 
