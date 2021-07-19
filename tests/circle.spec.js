@@ -25,18 +25,16 @@ const circle = require('../src/circle');
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
-    const parameter = circle(1);
     const expectedResult = {
       radius: 1, 
       area: 3.14, 
       circumference: 6.28
     };
-    // ESCREVA SEUS TESTES ABAIXO:
-    assert.deepStrictEqual(expectedResult, parameter)// Teste se circle retorna um objeto.
-    assert.deepStrictEqual(Object.keys(expectedResult).length, 3)// Teste se o objeto retornado tem 3 entradas.
-    assert.deepStrictEqual(circle(), undefined)// Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    assert.deepStrictEqual(circle(2).circumference, 12.56)// Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    assert.deepStrictEqual(circle(3).area, 28.259999999999998)// Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    assert.deepStrictEqual(circle(3), {"area": 28.259999999999998, "circumference": 18.84, "radius": 3})// Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    expect(circle(1)).toStrictEqual(expectedResult)// Teste se circle retorna um objeto.
+    expect(Object.keys(expectedResult).length).toStrictEqual(3)// Teste se o objeto retornado tem 3 entradas.
+    expect(circle()).toBeUndefined()// Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    expect((circle(2)).circumference).toStrictEqual(12.56)// Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    expect((circle(3)).area).toStrictEqual(28.259999999999998)// Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    expect(circle(3)).toStrictEqual({"area": 28.259999999999998, "circumference": 18.84, "radius": 3})// Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
   });
 });
