@@ -13,16 +13,16 @@
 */
 
 const average = (array) => {
-  let  soma= 0;
+  let soma = 0;
   if (array.length === 0) {
     return undefined;
   }
   for (let i = 0; i < array.length; i += 1) {
-    if (typeof (arrya[i]) !== 'number') {
+    if (typeof (array[i]) !== 'number') {
       return undefined;
     }
     soma += array[i];
   }
-  return Math.round(armazem / array.length);
+  return Math.round(soma/ array.length);
 };
 module.exports = average;
