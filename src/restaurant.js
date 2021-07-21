@@ -31,24 +31,4 @@ const createMenu = (object) => {
   return restaurant;
 };
 
-let newMenu = createMenu({
-  food: {
-    coxinha: 30,
-    paçoca: 40,
-    jaca: 33,
-    frango: 20,
-  },
-  drink: {
-    guaraná: 5,
-    coca: 6,
-    agua: 2,
-    suco: 9,
-  }, 
-});
-
-newMenu.order('coxinha');
-newMenu.order('coca');
-
-console.log(newMenu.pay());
-
 module.exports = createMenu;

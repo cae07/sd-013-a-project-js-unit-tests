@@ -1,8 +1,9 @@
 const assert = require('assert');
+const { TestScheduler } = require('jest');
 const createMenu = require('../src/restaurant');
 
 describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
-  it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
+  test('Verifica se a função `createMenu` tem o comportamento esperado', () => {
 
     let object = { food: { coxinha: 10, sopa: 7, sashimi: 7 }, drink: { agua: 2 } };
     const newMenu = createMenu(object);
@@ -11,17 +12,17 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     assert.deepStrictEqual(typeof createMenu(), "object");
 
     /* Teste 2 */
-    assert.deepStrictEqual(newMenu.fetchMenu(object), { food: { coxinha: 10, sopa: 7, sashimi: 7 }, drink: { agua: 2 } });
+    assert.deepStrictEqual(newMenu.fetchMenu(), { food: { coxinha: 10, sopa: 7, sashimi: 7 }, drink: { agua: 2 } });
 
     /* Teste 3 */
-    assert.deepStrictEqual(createMenu(object).fetchMenu(), object);
+    assert.deepStrictEqual(newMenu.fetchMenu(), object);
 
     /* Teste 4 */
     assert.deepStrictEqual(newMenu.consumption, []);
 
     /* Teste 5 */
     newMenu.order("coxinha");
-    assert.deepStrictEqual(newMenu.consumption, Object.values(newMenu.consumption));
+    assert.deepStrictEqual(newMenu.consumption, ['coxinha']);
 
     /* Teste 6 */
     newMenu.order("agua");
