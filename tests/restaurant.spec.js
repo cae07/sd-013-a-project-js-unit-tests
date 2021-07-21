@@ -99,6 +99,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     testObjectPasso6.order("agua");
     testObjectPasso6.order("sopa");
     testObjectPasso6.order("sashimi");
+    assert.deepStrictEqual(testObject6.consumption.length, 4);
     // objetoRetornado.order("coxinha");
     // objetoRetornado.order("agua");
     // objetoRetornado.order("sopa");
