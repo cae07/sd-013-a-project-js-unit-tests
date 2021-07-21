@@ -82,21 +82,23 @@
 const restaurant = {};
 
 const request = (item) => restaurant.consumption.push(item);
+
 const payment = (menu) => {
-  const consumo = restaurant.consumption;
-  const comida = menu.food;
-  const bebida = menu.drink;
+  const consumido = restaurant.consumption;
+  const pratos = menu.food;
+  const bebidas = menu.drink;
   let valueTotal = 0;
-  for (let index = 0; index < consumo.length; index += 1) {
-    if (comida[consumo[index]]) {
-      valueTotal += comida[consumo[index]];
+  for (let index = 0; index < consumido.length; index += 1) {
+    if (pratos[consumido[index]]) {
+      valueTotal += pratos[consumido[index]];
     }
-    if (bebida[consumo[index]]) {
-      valueTotal += bebida[consumo[index]];
+    if (bebidas[consumido[index]]) {
+      valueTotal += bebidas[consumido[index]];
     }
   }
   return valueTotal * 1.10;
 };
+
 const createMenu = (menu) => {
   restaurant.fetchMenu = () => menu;
   restaurant.consumption = [];
