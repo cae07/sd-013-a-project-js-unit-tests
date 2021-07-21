@@ -109,6 +109,10 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
+    const testObjectPasso7 = createMenu(menu);
+    testObjectPasso7.order('coxinha');
+    testObjectPasso7.order('agua');
+    testObjectPasso7.order('coxinha');
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
