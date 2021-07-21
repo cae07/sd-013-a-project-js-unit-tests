@@ -68,6 +68,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     const testObjectPasso3 = createMenu({ food: {}, drink: {} });
     testObjectPasso3.fetchMenu();
+    assert.deepStrictEqual(menu, createMenu(menu).fetchMenu());
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
@@ -77,6 +78,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     const testObjectPasso4 = createMenu(menu);
     testObjectPasso4.consumption
+    assert.deepStrictEqual(testObjectPasso4.consumption, []);
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
