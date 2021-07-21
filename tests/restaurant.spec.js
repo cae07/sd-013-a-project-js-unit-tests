@@ -59,15 +59,15 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
-    const testObject = createMenu({ food: {}, drink: {} });
-    testObject.fetchMenu(); 
+    const testObjectPasso2 = createMenu({ food: {}, drink: {} });
+    testObjectPasso2.fetchMenu(); 
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
-    const testObject1 = createMenu({ food: {}, drink: {} });
-    testObject1.fetchMenu();
+    const testObjectPasso3 = createMenu({ food: {}, drink: {} });
+    testObjectPasso3.fetchMenu();
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
@@ -75,6 +75,8 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
+    const testObjectPasso4 = createMenu(menu);
+    testObjectPasso4.consumption
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
