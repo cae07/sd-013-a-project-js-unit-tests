@@ -61,6 +61,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     const testObjectPasso2 = createMenu({ food: {}, drink: {} });
     testObjectPasso2.fetchMenu(); 
+    assert.deepStrictEqual(Object.keys(createMenu({ food: {}, drink: {} }).fetchMenu()), ['food', 'drink']);
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
