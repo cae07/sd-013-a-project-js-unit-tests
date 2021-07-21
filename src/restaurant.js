@@ -90,15 +90,16 @@ const orderFromMenu = (request) => {
 
 const formaDePagamento = () => {
   const foiConsumido = restaurant.fetchMenu();
-  const chave = Object.keys(foiConsumido);
-  for (let index = 0; index < chave.length; index += 1) {
+  const keys = Object.keys(foiConsumido);
+  for (let index = 0; index < keys.length; index += 1) {
     restaurant.consumption.forEach((item) => {
-      if (formaDePagamento[chave[index][item]] !== undefined) {
-        restaurant.somaDosPreçosDosPedidos += formaDePagamento[chave[index][item]];
+      if (foiConsumido[keys[index]][item] !== undefined) {
+        restaurant.somaDosPreçosDosPedidos += foiConsumido[keys[index]][item];
       }
     });
   }
-  return restaurant.somaDosPreçosDosPedidos * 1.1;
+  const totalMais10Porcento = parseFloat((restaurant.somaDosPreçosDosPedidos * 1.1).toPrecision(4));
+  return totalMais10Porcento;
 };
 
 const createMenu = (myMenu) => {

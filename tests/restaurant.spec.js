@@ -111,11 +111,10 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
 
     const teste7 = createMenu( { objetoQualquer: {} } );
     teste7.consumption = [];
-    teste7.order("coxinha")
-    teste7.order("agua");
-    teste7.order("sopa");
-    teste7.order("sashimi");
-    assert.deepStrictEqual(teste7.consumption, ["coxinha", "agua", "sopa", "sashimi"]);
+    teste7.order('coxinha')
+    teste7.order('agua');
+    teste7.order('coxinha')
+    assert.deepStrictEqual(teste7.consumption, ['coxinha', 'agua', 'coxinha']);
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
@@ -125,12 +124,19 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
-    let objetoQualquer = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
-    const teste8 = createMenu( { objetoQualquer: {} } );
+    let teste8 = createMenu({
+      food: {},
+      drink: {}
+    });
+    let consumiveis = {
+      food: {'coxinha': 3.90, 'sanduiche': 9.90},
+      drink: {'agua': 3.90, 'cerveja': 6.90}
+    };
+    let teste8final = createMenu(consumiveis);
     teste8.order('coxinha');
     teste8.order('agua');
     teste8.order('coxinha');
-    assert.strictEqual(teste8.pay(), 12.87);
+    assert.strictEqual(teste8final.pay(), 25.74);
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
