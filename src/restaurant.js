@@ -87,5 +87,21 @@ const createMenu = (menu) => {
   restaurant.pay = () => payment(menu);
   return restaurant;
 };
+const request = (item) => restaurant.consumption.push(item);
+const payment = (menu) => {
+  const consumo = restaurant.consumption;
+  const comida = menu.food;
+  const bebida = menu.drink;
+  let valueTotal = 0;
+  for (let index = 0; index < consumo.length; index += 1) {
+    if (comida[consumo[index]]) {
+      valueTotal += comida[consumo[index]];
+    }
+    if (bebida[consumo[index]]) {
+      valueTotal += bebida[consumo[index]];
+    }
+  }
+  return valueTotal * 1.10;
+};
 
 module.exports = createMenu;
