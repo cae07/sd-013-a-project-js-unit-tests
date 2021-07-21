@@ -113,6 +113,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     testObjectPasso7.order('coxinha');
     testObjectPasso7.order('agua');
     testObjectPasso7.order('coxinha');
+    assert.deepStrictEqual(testObjectPasso7.consumption, ['coxinha', 'agua', 'coxinha']);
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
@@ -126,7 +127,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     testObjectPasso8.order('coxinha');
     testObjectPasso8.order('agua');
     testObjectPasso8.order('coxinha');
-    assert.deepStrictEqual(testObjectPasso8.pay(), 12.87)
+    assert.deepStrictEqual(testObject8.pay(), 12.87)
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
