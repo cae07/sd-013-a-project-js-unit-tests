@@ -1,15 +1,15 @@
 /* eslint-disable max-len */
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema,
+  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
-  - ler o menu cadastrado;
+  - ler o menu cadastrado; 
   - fazer pedidos;
   - verificar o que foi pedido;
   - somar o valor da conta.
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
-  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema.
+  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. 
   Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
@@ -57,55 +57,48 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro,
+// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
-// DICA: para criar isso, você pode:
+// DICA: para criar isso, você pode: 
 // - Definir a função `createMenu()`
-// - Definir o objeto que a `createMenu()` retorna, mas separadamente
+// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
 // - E, depois, definir a função que será atribuída a `order`.
 // ```
 // const restaurant = {}
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 //
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`.
+// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`,
-// soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
+// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
+// soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-// Funções criadas junto ao auxilio de amigos estagiários do FNDE. 
 
-const restaurant = {};
+function consumo(string) {
+  this.consumption.push(string);
+}
 
-const request = (item) => restaurant.consumption.push(item);
-
-const payment = (menu) => {
-  const consumo = restaurant.consumption;
-  const comida = menu.food;
-  const bebida = menu.drink;
-  let valueTotal = 0;
-  for (let index = 0; index < consumo.length; index += 1) {
-    if (comida[consumo[index]]) {
-      valueTotal += comida[consumo[index]];
-    }
-    if (bebida[consumo[index]]) {
-      valueTotal += bebida[consumo[index]];
-    }
+function pagar() {
+  let conta = 0;
+  const menu = this.fetchMenu();
+  for (let index of this.consumption) {
+    let precoDoProduto = menu.drink[index] ? menu.drink[index] : menu.food[index];
+    conta += precoDoProduto;
   }
-  return valueTotal * 1.10;
-};
+  conta = Math.round(conta * 110) / 100;
+  return conta;
+}
 
-const createMenu = (menu) => {
-  restaurant.fetchMenu = () => menu;
-  restaurant.consumption = [];
-  restaurant.order = request;
-  restaurant.pay = () => payment(menu);
-  return restaurant;
-};
+const createMenu = (object) => ({
+  fetchMenu: () => object,
+  consumption: [],
+  order: consumo,
+  pay: pagar,
+});
 
 module.exports = createMenu;
