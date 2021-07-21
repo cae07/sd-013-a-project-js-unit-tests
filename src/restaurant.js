@@ -81,7 +81,7 @@
 
 const restaurant = {
   consumption: [],
-  aPagar: 0,
+  somaDosPreçosDosPedidos: 0,
 };
 
 const orderFromMenu = (request) => {
@@ -92,8 +92,13 @@ const formaDePagamento = () => {
   const foiConsumido = restaurant.fetchMenu();
   const chave = Object.keys(foiConsumido);
   for (let index = 0; index < chave.length; index += 1) {
-    
+    restaurant.consumption.forEach((item) => {
+      if (formaDePagamento[chave[index][item]] !== undefined) {
+        restaurant.somaDosPreçosDosPedidos += formaDePagamento[chave[index][item]];
+      }
+    });
   }
+  return restaurant.somaDosPreçosDosPedidos * 1.1;
 };
 
 const createMenu = (myMenu) => {
